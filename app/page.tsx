@@ -12,8 +12,11 @@ export default async function HomePage() {
         {/* Header */}
         <div className="text-center space-y-4">
           <h1 className="text-4xl font-bold text-gray-900">
-            Sec 4 Chem Mock Exam
+            Get Feedback for Sec 4 Chem Mock Exam
           </h1>
+          <p className="text-lg text-gray-600">
+            It's (kinda) not your fault; never lose marks for dumb reasons again.
+          </p>
         </div>
 
         {/* Questions Grid */}
