@@ -1,0 +1,1 @@
+CREATE INDEX IF NOT EXISTS "idx_model_answer_images_question" ON "model_answer_images" USING btree ("question_id");

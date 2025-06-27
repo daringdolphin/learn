@@ -5,3 +5,5 @@ Exports the types for the app.
 */
 
 export * from "./server-action-types"
+export * from "./question-types"
+export * from "./feedback-types"
