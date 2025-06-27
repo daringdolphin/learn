@@ -1,5 +1,7 @@
 import { OpenAI } from 'openai'
 import { AnalysisResult, ModelAnswerPart } from '@/types'
+import { downloadAndOptimizeImage } from '@/lib/utils/image-processing'
+import { OPENAI_CONFIG } from '@/lib/config/openai-config'
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
@@ -11,17 +13,22 @@ export interface AnalyzeChemistryAnswerParams {
   referenceImageUrls: string[]
 }
 
+
+
 /**
  * Validates if an image URL is accessible to OpenAI
  */
 async function validateImageForOpenAI(url: string): Promise<boolean> {
   try {
     const controller = new AbortController()
-    const timeoutId = setTimeout(() => controller.abort(), 3000) // 3 second timeout
+    const timeoutId = setTimeout(() => controller.abort(), 5000) // 5 second timeout
     
     const response = await fetch(url, {
       method: 'HEAD',
-      signal: controller.signal
+      signal: controller.signal,
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (compatible; FeedbackApp/1.0)',
+      }
     })
     
     clearTimeout(timeoutId)
@@ -45,32 +52,68 @@ export async function analyzeChemistryAnswer({
   modelAnswerJson,
   referenceImageUrls
 }: AnalyzeChemistryAnswerParams): Promise<AnalysisResult> {
-  const maxRetries = 2
+  const maxRetries = OPENAI_CONFIG.MAX_RETRIES
   let lastError: Error | null = null
 
-  // Pre-validate reference image URLs
-  console.log(`Validating ${referenceImageUrls.length} reference image URLs...`)
-  const validatedReferenceUrls: string[] = []
+  // Strategy 1: Limit the number of reference images to prevent overwhelming OpenAI
+  const limitedReferenceUrls = referenceImageUrls.slice(0, OPENAI_CONFIG.MAX_REFERENCE_IMAGES)
   
-  for (const url of referenceImageUrls) {
-    const isValid = await validateImageForOpenAI(url)
-    if (isValid) {
-      validatedReferenceUrls.push(url)
-      console.log(`✓ Reference image validated: ${url}`)
+  if (referenceImageUrls.length > OPENAI_CONFIG.MAX_REFERENCE_IMAGES) {
+    console.log(`Limiting reference images from ${referenceImageUrls.length} to ${OPENAI_CONFIG.MAX_REFERENCE_IMAGES} to prevent timeouts`)
+  }
+
+  // Strategy 2: Download and optimize reference images to prevent timeouts
+  console.log(`Processing ${limitedReferenceUrls.length} reference images...`)
+  const referenceDataUrls: string[] = []
+  
+  for (let i = 0; i < limitedReferenceUrls.length; i++) {
+    const url = limitedReferenceUrls[i]
+    console.log(`Downloading and optimizing reference image ${i + 1}/${limitedReferenceUrls.length}: ${url}`)
+    
+    const optimizedDataUrl = await downloadAndOptimizeImage(
+      url,
+      OPENAI_CONFIG.REFERENCE_IMAGE_MAX_WIDTH,
+      OPENAI_CONFIG.REFERENCE_IMAGE_QUALITY
+    )
+    
+    if (optimizedDataUrl) {
+      referenceDataUrls.push(optimizedDataUrl)
+      console.log(`✓ Successfully optimized reference image ${i + 1}`)
     } else {
-      console.warn(`✗ Reference image failed validation: ${url}`)
+      console.warn(`✗ Failed to optimize reference image ${i + 1}: ${url}`)
     }
   }
   
-  console.log(`Using ${validatedReferenceUrls.length}/${referenceImageUrls.length} validated reference images`)
+  console.log(`Successfully processed ${referenceDataUrls.length}/${limitedReferenceUrls.length} reference images`)
 
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
-      return await performAnalysis({
-        studentImageDataUrl,
-        modelAnswerJson,
-        referenceImageUrls: validatedReferenceUrls
-      })
+      // Strategy 3: Progressive degradation - try with fewer images if timeout occurs
+      if (attempt === 1) {
+        // First attempt: try with all converted reference images
+        return await performAnalysis({
+          studentImageDataUrl,
+          modelAnswerJson,
+          referenceImageUrls: referenceDataUrls
+        })
+      } else if (attempt === 2) {
+        // Second attempt: try with half the reference images
+        const halfImages = referenceDataUrls.slice(0, Math.ceil(referenceDataUrls.length / 2))
+        console.log(`Retry attempt ${attempt}: using ${halfImages.length} reference images`)
+        return await performAnalysis({
+          studentImageDataUrl,
+          modelAnswerJson,
+          referenceImageUrls: halfImages
+        })
+      } else {
+        // Final attempt: try without any reference images
+        console.log(`Final attempt ${attempt}: analyzing without reference images`)
+        return await performAnalysis({
+          studentImageDataUrl,
+          modelAnswerJson,
+          referenceImageUrls: []
+        })
+      }
     } catch (error) {
       lastError = error as Error
       console.warn(`Analysis attempt ${attempt} failed:`, error)
@@ -80,25 +123,16 @@ export async function analyzeChemistryAnswer({
         if (error.status === 400 || error.status === 401) {
           throw error // Authentication or bad request - don't retry
         }
-        
-        // If it's an image URL error, try without reference images
-        if (error.code === 'invalid_image_url' && validatedReferenceUrls.length > 0 && attempt === 1) {
-          console.log('Retrying without reference images due to image URL error...')
-          try {
-            return await performAnalysis({
-              studentImageDataUrl,
-              modelAnswerJson,
-              referenceImageUrls: []
-            })
-          } catch (retryError) {
-            console.warn('Retry without reference images also failed:', retryError)
-          }
-        }
       }
       
       // Wait before retry (exponential backoff)
       if (attempt < maxRetries) {
-        await new Promise(resolve => setTimeout(resolve, Math.pow(2, attempt) * 1000))
+        const delay = Math.min(
+          Math.pow(2, attempt) * OPENAI_CONFIG.INITIAL_RETRY_DELAY,
+          OPENAI_CONFIG.MAX_RETRY_DELAY
+        )
+        console.log(`Waiting ${delay}ms before retry...`)
+        await new Promise(resolve => setTimeout(resolve, delay))
       }
     }
   }
@@ -118,7 +152,7 @@ async function performAnalysis({
 You will receive:
 1. an image of a student's handwritten exam paper that is graded with annotations by person who is marking in red.
 2. a JSON object containing the model answer for the question.
-${referenceImageUrls.length > 0 ? '3. reference images for the question showing the model answer.' : '3. No reference images are available for this question.'}
+3. reference images for the question showing the model answer.
 
 ## Core Problem
 Students often understand chemistry concepts but lose marks because they don't use the specific keywords and phrasing that markers expect. Others have conceptual gaps that need addressing.
@@ -204,15 +238,16 @@ Be laser-focused on what will immediately improve their next attempt at similar 
     }
   ]
 
-  // Add reference images with low detail (only if validated)
+  // Add reference images with low detail (using data URLs to prevent download timeouts)
   if (referenceImageUrls.length > 0) {
     console.log(`Adding ${referenceImageUrls.length} reference images to analysis`)
-    for (const referenceUrl of referenceImageUrls) {
+    for (let i = 0; i < referenceImageUrls.length; i++) {
+      const referenceUrl = referenceImageUrls[i]
       messageContent.push({
         type: "image_url",
         image_url: {
           url: referenceUrl,
-          detail: "low" // Low detail for reference images
+          detail: "low" // Low detail for reference images to save tokens
         }
       })
     }
@@ -228,11 +263,11 @@ Be laser-focused on what will immediately improve their next attempt at similar 
 
   // Create the completion with timeout
   const controller = new AbortController()
-  const timeoutId = setTimeout(() => controller.abort(), 120000) // 120 second timeout
+  const timeoutId = setTimeout(() => controller.abort(), OPENAI_CONFIG.ANALYSIS_TIMEOUT)
 
   try {
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o",
+      model: OPENAI_CONFIG.MODEL,
       messages: [
         {
           role: "system",
@@ -243,8 +278,8 @@ Be laser-focused on what will immediately improve their next attempt at similar 
           content: messageContent
         }
       ],
-      max_tokens: 1500,
-      temperature: 0.1, // Low temperature for consistent, focused responses
+      max_tokens: OPENAI_CONFIG.MAX_TOKENS,
+      temperature: OPENAI_CONFIG.TEMPERATURE,
       response_format: { type: "json_object" }
     }, {
       signal: controller.signal
@@ -276,7 +311,7 @@ Be laser-focused on what will immediately improve their next attempt at similar 
     clearTimeout(timeoutId)
     
     if (error instanceof Error && error.name === 'AbortError') {
-      throw new Error('Analysis timed out after 120 seconds')
+      throw new Error(`Analysis timed out after ${OPENAI_CONFIG.ANALYSIS_TIMEOUT / 1000} seconds`)
     }
     
     if (error instanceof OpenAI.APIError) {

@@ -1,4 +1,5 @@
 import sharp from 'sharp'
+import { OPENAI_CONFIG } from '@/lib/config/openai-config'
 
 export interface ProcessedImage {
   dataUrl: string
@@ -178,4 +179,98 @@ export function isValidImageDimensions(width: number, height: number): boolean {
 export function createDataUrl(buffer: Buffer, mimeType: string): string {
   const base64 = buffer.toString('base64')
   return `data:${mimeType};base64,${base64}`
+}
+
+/**
+ * Optimizes an image for OpenAI reference use by compressing and resizing
+ * @param imageBuffer - The image buffer to optimize
+ * @param maxWidth - Maximum width for the optimized image (default: 1024)
+ * @param quality - JPEG quality (default: 60 for reference images)
+ * @returns Promise resolving to optimized image data URL
+ */
+export async function optimizeImageForOpenAI(
+  imageBuffer: Buffer, 
+  maxWidth: number = 1024, 
+  quality: number = 60
+): Promise<string> {
+  try {
+    // Process the image with Sharp for optimization
+    const processedBuffer = await sharp(imageBuffer)
+      .rotate() // Auto-rotate based on EXIF orientation
+      .resize(maxWidth, null, { 
+        withoutEnlargement: true, // Don't upscale small images
+        fit: 'inside' // Maintain aspect ratio
+      })
+      .jpeg({ 
+        quality,
+        progressive: true,
+        optimizeScans: true
+      })
+      .toBuffer()
+
+    // Convert to base64 data URL
+    const base64 = processedBuffer.toString('base64')
+    const dataUrl = `data:image/jpeg;base64,${base64}`
+
+    return dataUrl
+
+  } catch (error) {
+    throw new Error(`Failed to optimize image: ${error instanceof Error ? error.message : 'Unknown error'}`)
+  }
+}
+
+/**
+ * Downloads and optimizes an image from a URL for OpenAI
+ * @param url - The image URL to download and optimize
+ * @param maxWidth - Maximum width for the optimized image (default: 1024)
+ * @param quality - JPEG quality (default: 60 for reference images)
+ * @returns Promise resolving to optimized image data URL or null if failed
+ */
+export async function downloadAndOptimizeImage(
+  url: string, 
+  maxWidth: number = OPENAI_CONFIG.REFERENCE_IMAGE_MAX_WIDTH, 
+  quality: number = OPENAI_CONFIG.REFERENCE_IMAGE_QUALITY
+): Promise<string | null> {
+  try {
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), OPENAI_CONFIG.DOWNLOAD_TIMEOUT)
+
+    const response = await fetch(url, {
+      signal: controller.signal,
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (compatible; FeedbackApp/1.0)',
+        'Accept': 'image/*'
+      }
+    })
+
+    clearTimeout(timeoutId)
+
+    if (!response.ok) {
+      console.warn(`Failed to download image ${url}: ${response.status} ${response.statusText}`)
+      return null
+    }
+
+    const contentType = response.headers.get('content-type')
+    if (!contentType || !contentType.startsWith('image/')) {
+      console.warn(`Invalid content type for ${url}: ${contentType}`)
+      return null
+    }
+
+    const arrayBuffer = await response.arrayBuffer()
+    const buffer = Buffer.from(arrayBuffer)
+
+    // Optimize the downloaded image
+    const optimizedDataUrl = await optimizeImageForOpenAI(buffer, maxWidth, quality)
+
+    console.log(`✓ Downloaded and optimized image: ${url} (${Math.round(arrayBuffer.byteLength / 1024)}KB → ${Math.round(Buffer.from(optimizedDataUrl.split(',')[1], 'base64').length / 1024)}KB)`)
+    return optimizedDataUrl
+
+  } catch (error) {
+    if (error instanceof Error && error.name === 'AbortError') {
+      console.warn(`Download timeout for image: ${url}`)
+    } else {
+      console.warn(`Failed to download and optimize image ${url}:`, error)
+    }
+    return null
+  }
 } 
