@@ -15,6 +15,13 @@
       "when": 1751005218896,
       "tag": "0001_silky_blindfold",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1751028560384,
+      "tag": "0002_yellow_komodo",
+      "breakpoints": true
     }
   ]
 }

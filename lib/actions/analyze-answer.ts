@@ -7,7 +7,7 @@ import { supabase } from '@/lib/api/supabase'
 import { analyzeChemistryAnswer, getDefaultModelProvider } from '@/lib/api/llm-analyzer'
 import { processUploadedImage, MAX_FILE_SIZE, ALLOWED_MIME_TYPES } from '@/lib/utils/image-processing'
 import { logError } from '@/lib/utils/error-handling'
-import { ActionState, AnalysisResult, ModelAnswerPart, ModelProvider } from '@/types'
+import { ActionState, AnalysisResult, ModelAnswerPart, ModelProvider, SyllabusReference } from '@/types'
 
 /**
  * Server action for analyzing chemistry answers
@@ -108,6 +108,7 @@ export async function analyzeAnswerAction(
         studentImageDataUrl: processedImage.dataUrl,
         modelAnswerJson: question.modelAnswerJson as ModelAnswerPart[],
         referenceImageUrls,
+        syllabusReference: question.syllabusReference as SyllabusReference,
         modelProvider: selectedModelProvider
       })
     } catch (analysisError) {

@@ -5,6 +5,7 @@ export const questionsTable = pgTable("questions", {
   promptImg: text("prompt_img").notNull(),
   modelAnswerJson: jsonb("model_answer_json").notNull(),
   marks: integer("marks").notNull(),
+  syllabusReference: jsonb("syllabus_reference"),
   createdAt: timestamp("created_at").defaultNow().notNull()
 })
 

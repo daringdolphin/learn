@@ -17,6 +17,7 @@ export async function analyzeChemistryAnswerClaude({
   studentImageDataUrl,
   modelAnswerJson,
   referenceImageUrls,
+  syllabusReference
 }: AnalysisParams): Promise<AnalysisResult> {
   const maxRetries = ANTHROPIC_CONFIG.MAX_RETRIES
   let lastError: Error | null = null
@@ -60,7 +61,8 @@ export async function analyzeChemistryAnswerClaude({
         return await performClaudeAnalysis({
           studentImageDataUrl,
           modelAnswerJson,
-          referenceImageUrls: referenceDataUrls
+          referenceImageUrls: referenceDataUrls,
+          syllabusReference
         })
       } else if (attempt === 2) {
         // Second attempt: try with half the reference images
@@ -69,7 +71,8 @@ export async function analyzeChemistryAnswerClaude({
         return await performClaudeAnalysis({
           studentImageDataUrl,
           modelAnswerJson,
-          referenceImageUrls: halfImages
+          referenceImageUrls: halfImages,
+          syllabusReference
         })
       } else {
         // Final attempt: try without any reference images
@@ -77,7 +80,8 @@ export async function analyzeChemistryAnswerClaude({
         return await performClaudeAnalysis({
           studentImageDataUrl,
           modelAnswerJson,
-          referenceImageUrls: []
+          referenceImageUrls: [],
+          syllabusReference
         })
       }
     } catch (error) {
@@ -109,7 +113,8 @@ export async function analyzeChemistryAnswerClaude({
 async function performClaudeAnalysis({
   studentImageDataUrl,
   modelAnswerJson,
-  referenceImageUrls
+  referenceImageUrls,
+  syllabusReference
 }: AnalysisParams): Promise<AnalysisResult> {
   // Build the message content array
   const messageContent: Anthropic.MessageParam['content'] = [
@@ -149,6 +154,12 @@ async function performClaudeAnalysis({
   messageContent.push({
     type: "text",
     text: `Model Answer JSON:\n${JSON.stringify(modelAnswerJson, null, 2)}`
+  })
+
+  // Add syllabus reference information
+  messageContent.push({
+    type: "text",
+    text: `Syllabus Reference:\n${JSON.stringify(syllabusReference, null, 2)}`
   })
 
   // Create the completion with timeout

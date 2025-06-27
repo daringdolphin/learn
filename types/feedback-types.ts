@@ -1,4 +1,5 @@
 import type { ModelAnswerPart } from './question-types'
+import type { SyllabusReference } from './syllabus-reference-types'
 
 export interface AnalysisResult {
   examSkills: ExamSkills
@@ -20,6 +21,7 @@ export interface AnalysisParams {
   studentImageDataUrl: string
   modelAnswerJson: ModelAnswerPart[]
   referenceImageUrls: string[]
+  syllabusReference: SyllabusReference
   modelProvider?: ModelProvider // Optional, defaults to 'openai'
 }
 

@@ -19,6 +19,7 @@ export async function getAllQuestionsAction(): Promise<ActionState<Question[]>> 
       promptImg: q.promptImg,
       modelAnswerJson: q.modelAnswerJson as any,
       marks: q.marks,
+      syllabusReference: q.syllabusReference as any,
       createdAt: q.createdAt.toISOString()
     }))
 
@@ -54,6 +55,7 @@ export async function getQuestionByIdAction(questionId: string): Promise<ActionS
       promptImg: question.promptImg,
       modelAnswerJson: question.modelAnswerJson as any,
       marks: question.marks,
+      syllabusReference: question.syllabusReference as any,
       createdAt: question.createdAt.toISOString()
     }
 

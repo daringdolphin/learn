@@ -12,6 +12,9 @@
 # planning
 /_planning
 
+#scripts
+/scripts
+
 # next.js
 /.next/
 /out/

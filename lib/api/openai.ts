@@ -45,7 +45,8 @@ async function validateImageForOpenAI(url: string): Promise<boolean> {
 export async function analyzeChemistryAnswer({
   studentImageDataUrl,
   modelAnswerJson,
-  referenceImageUrls
+  referenceImageUrls,
+  syllabusReference
 }: AnalysisParams): Promise<AnalysisResult> {
   const maxRetries = OPENAI_CONFIG.MAX_RETRIES
   let lastError: Error | null = null
@@ -89,7 +90,8 @@ export async function analyzeChemistryAnswer({
         return await performAnalysis({
           studentImageDataUrl,
           modelAnswerJson,
-          referenceImageUrls: referenceDataUrls
+          referenceImageUrls: referenceDataUrls,
+          syllabusReference
         })
       } else if (attempt === 2) {
         // Second attempt: try with half the reference images
@@ -98,7 +100,8 @@ export async function analyzeChemistryAnswer({
         return await performAnalysis({
           studentImageDataUrl,
           modelAnswerJson,
-          referenceImageUrls: halfImages
+          referenceImageUrls: halfImages,
+          syllabusReference
         })
       } else {
         // Final attempt: try without any reference images
@@ -106,7 +109,8 @@ export async function analyzeChemistryAnswer({
         return await performAnalysis({
           studentImageDataUrl,
           modelAnswerJson,
-          referenceImageUrls: []
+          referenceImageUrls: [],
+          syllabusReference
         })
       }
     } catch (error) {
@@ -138,7 +142,8 @@ export async function analyzeChemistryAnswer({
 async function performAnalysis({
   studentImageDataUrl,
   modelAnswerJson,
-  referenceImageUrls
+  referenceImageUrls,
+  syllabusReference
 }: AnalysisParams): Promise<AnalysisResult> {
   // Build the message content array
   const messageContent: OpenAI.Chat.Completions.ChatCompletionContentPart[] = [
@@ -176,6 +181,12 @@ async function performAnalysis({
   messageContent.push({
     type: "text",
     text: `Model Answer JSON:\n${JSON.stringify(modelAnswerJson, null, 2)}`
+  })
+
+  // Add syllabus reference information
+  messageContent.push({
+    type: "text",
+    text: `Syllabus Reference:\n${JSON.stringify(syllabusReference, null, 2)}`
   })
 
   // Create the completion with timeout

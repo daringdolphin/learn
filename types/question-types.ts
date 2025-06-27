@@ -1,8 +1,11 @@
+import { SyllabusReference } from "./syllabus-reference-types"
+
 export interface Question {
   id: string
   promptImg: string
   modelAnswerJson: ModelAnswerPart[]
   marks: number
+  syllabusReference: SyllabusReference
   createdAt: string
 }
 

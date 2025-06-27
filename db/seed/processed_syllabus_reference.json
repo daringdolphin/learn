@@ -1,0 +1,632 @@
+{
+  "1": {
+    "a": {
+      "topics_tested": [
+        "Acid-Base Chemistry",
+        "Qualitative Analysis"
+      ],
+      "syllabus_content": [
+        "Salts",
+        "Qualitative analysis of cations, anions and gases"
+      ],
+      "learning_outcomes": [
+        "Describe the techniques used in the preparation, separation and purification of salts by precipitation",
+        "Describe the general rules of solubility for common salts"
+      ]
+    },
+    "b": {
+      "topics_tested": [
+        "Redox Chemistry"
+      ],
+      "syllabus_content": [
+        "Electrochemistry"
+      ],
+      "learning_outcomes": [
+        "Describe electrolysis as the conduction of electricity through an ionic compound when molten or in solution, leading to chemical changes at the electrodes",
+        "Predict the likely products of the electrolysis of molten binary ionic compounds using inert electrodes"
+      ]
+    },
+    "c": {
+      "topics_tested": [
+        "Patterns in the Periodic Table"
+      ],
+      "syllabus_content": [
+        "Reactivity Series"
+      ],
+      "learning_outcomes": [
+        "Relate thermal stability of metal carbonates to the reactivity series"
+      ]
+    },
+    "d": {
+      "topics_tested": [
+        "Redox Chemistry"
+      ],
+      "syllabus_content": [
+        "Oxidation and Reduction"
+      ],
+      "learning_outcomes": [
+        "Identify redox reactions in terms of oxygen/hydrogen gain or loss and changes in oxidation state"
+      ]
+    },
+    "e": {
+      "topics_tested": [
+        "Acid-Base Chemistry",
+        "Patterns in the Periodic Table"
+      ],
+      "syllabus_content": [
+        "Acids and Bases",
+        "Transition Elements"
+      ],
+      "learning_outcomes": [
+        "Describe the characteristic properties of acids in reactions with bases to form salts",
+        "Describe typical transition elements as metals forming coloured compounds"
+      ]
+    }
+  },
+  "2": {
+    "a": {
+      "topics_tested": [
+        "Chemical Bonding and Structure"
+      ],
+      "syllabus_content": [
+        "Structure and Properties of Materials"
+      ],
+      "learning_outcomes": [
+        "Describe the differences between elements, compounds and mixtures"
+      ]
+    },
+    "b": {
+      "topics_tested": [
+        "Chemical Calculations"
+      ],
+      "syllabus_content": [
+        "The Mole Concept and Stoichiometry"
+      ],
+      "learning_outcomes": [
+        "Calculate empirical formulae from relevant data",
+        "Calculate the percentage mass of an element in a compound"
+      ]
+    }
+  },
+  "3": {
+    "a": {
+      "topics_tested": [],
+      "syllabus_content": [],
+      "learning_outcomes": [],
+      "subparts": {
+        "i": {
+          "topics_tested": [
+            "Chemical Energetics"
+          ],
+          "syllabus_content": [
+            "Enthalpy changes"
+          ],
+          "learning_outcomes": [
+            "Represent energy changes by energy profile diagrams, including activation energies"
+          ]
+        },
+        "ii": {
+          "topics_tested": [
+            "Chemical Energetics"
+          ],
+          "syllabus_content": [
+            "Enthalpy changes"
+          ],
+          "learning_outcomes": [
+            "Explain overall enthalpy changes in terms of the energy changes associated with breaking and making covalent bonds"
+          ]
+        },
+        "iii": {
+          "topics_tested": [
+            "Chemical Energetics"
+          ],
+          "syllabus_content": [
+            "Enthalpy changes"
+          ],
+          "learning_outcomes": [
+            "Describe bond breaking as an endothermic process and bond making as an exothermic process"
+          ]
+        }
+      }
+    }
+  },
+  "4": {
+    "a": {
+      "topics_tested": [],
+      "syllabus_content": [],
+      "learning_outcomes": [],
+      "subparts": {
+        "i": {
+          "topics_tested": [
+            "Patterns in the Periodic Table"
+          ],
+          "syllabus_content": [
+            "Reactivity Series"
+          ],
+          "learning_outcomes": [
+            "Describe essential conditions for corrosion (rusting) of iron and methods of prevention"
+          ]
+        },
+        "ii": {
+          "topics_tested": [
+            "Patterns in the Periodic Table"
+          ],
+          "syllabus_content": [
+            "Reactivity Series"
+          ],
+          "learning_outcomes": [
+            "Describe sacrificial protection of iron by a more reactive metal"
+          ]
+        }
+      }
+    },
+    "b": {
+      "topics_tested": [
+        "Patterns in the Periodic Table"
+      ],
+      "syllabus_content": [
+        "Reactivity Series"
+      ],
+      "learning_outcomes": [
+        "Place specified metals in order of reactivity using given reaction evidence",
+        "Deduce order of reactivity from experimental results"
+      ]
+    }
+  },
+  "5": {
+    "a": {
+      "topics_tested": [
+        "Acid-Base Chemistry"
+      ],
+      "syllabus_content": [
+        "Acids and Bases"
+      ],
+      "learning_outcomes": [
+        "Describe qualitatively the difference between strong and weak acids in terms of the extent of ionisation",
+        "Describe neutrality and relative acidity and alkalinity in terms of relative H⁺ and OH⁻ ion concentrations"
+      ]
+    },
+    "b": {
+      "topics_tested": [
+        "Acid-Base Chemistry"
+      ],
+      "syllabus_content": [
+        "Acids and Bases"
+      ],
+      "learning_outcomes": [
+        "Describe the meanings of the terms acid and alkali in terms of the ions they produce in aqueous solution"
+      ]
+    },
+    "c": {
+      "topics_tested": [
+        "Acid-Base Chemistry"
+      ],
+      "syllabus_content": [
+        "Acids and Bases"
+      ],
+      "learning_outcomes": [
+        "Describe the characteristic properties of acids in reactions with metals to form salts"
+      ]
+    },
+    "d": {
+      "topics_tested": [
+        "Acid-Base Chemistry",
+        "Redox Chemistry"
+      ],
+      "syllabus_content": [
+        "Acids and Bases",
+        "Electrochemistry"
+      ],
+      "learning_outcomes": [
+        "Describe neutrality and relative acidity and alkalinity in terms of relative H⁺ and OH⁻ ion concentrations",
+        "Describe electrolysis as evidence for the existence of ions which are held in a lattice when solid but free to move when molten or in solution"
+      ]
+    }
+  },
+  "6": {
+    "a": {
+      "topics_tested": [],
+      "syllabus_content": [],
+      "learning_outcomes": [],
+      "subparts": {
+        "i": {
+          "topics_tested": [
+            "The Particulate Nature of Matter"
+          ],
+          "syllabus_content": [
+            "Atomic Structure"
+          ],
+          "learning_outcomes": [
+            "Deduce the numbers of protons, neutrons and electrons in atoms and ions given proton and nucleon numbers"
+          ]
+        },
+        "ii": {
+          "topics_tested": [
+            "The Particulate Nature of Matter"
+          ],
+          "syllabus_content": [
+            "Atomic Structure"
+          ],
+          "learning_outcomes": [
+            "Define the term isotopes"
+          ]
+        },
+        "iii": {
+          "topics_tested": [
+            "Patterns in the Periodic Table"
+          ],
+          "syllabus_content": [
+            "Group Properties"
+          ],
+          "learning_outcomes": [
+            "Describe Cl₂, Br₂ and I₂ as a collection of diatomic non-metals showing displacement reactions with other halide ions"
+          ]
+        },
+        "iv": {
+          "topics_tested": [
+            "Patterns in the Periodic Table"
+          ],
+          "syllabus_content": [
+            "Group Properties"
+          ],
+          "learning_outcomes": [
+            "Predict properties of elements in Group 17 using the Periodic Table"
+          ]
+        }
+      }
+    },
+    "b": {
+      "topics_tested": [],
+      "syllabus_content": [],
+      "learning_outcomes": [],
+      "subparts": {
+        "i": {
+          "topics_tested": [
+            "Redox Chemistry"
+          ],
+          "syllabus_content": [
+            "Oxidation and Reduction"
+          ],
+          "learning_outcomes": [
+            "Describe the use of aqueous potassium iodide in testing for oxidising agents"
+          ]
+        },
+        "ii": {
+          "topics_tested": [
+            "Redox Chemistry"
+          ],
+          "syllabus_content": [
+            "Oxidation and Reduction"
+          ],
+          "learning_outcomes": [
+            "Define redox in terms of changes in oxidation state and identify redox reactions"
+          ]
+        },
+        "iii": {
+          "topics_tested": [
+            "Chemical Calculations"
+          ],
+          "syllabus_content": [
+            "The Mole Concept and Stoichiometry"
+          ],
+          "learning_outcomes": [
+            "Apply the concept of solution concentration to process the results of volumetric experiments and solve simple problems"
+          ]
+        }
+      }
+    },
+    "c": {
+      "topics_tested": [],
+      "syllabus_content": [],
+      "learning_outcomes": [],
+      "subparts": {
+        "i": {
+          "topics_tested": [
+            "Chemical Bonding and Structure"
+          ],
+          "syllabus_content": [
+            "Covalent Bonding"
+          ],
+          "learning_outcomes": [
+            "Describe, using ‘dot-and-cross’ diagrams, the formation of covalent bonds between non-metallic elements"
+          ]
+        },
+        "ii": {
+          "topics_tested": [
+            "Chemical Bonding and Structure"
+          ],
+          "syllabus_content": [
+            "Structure and Properties of Materials"
+          ],
+          "learning_outcomes": [
+            "Relate the physical properties of covalent substances to their structure and bonding"
+          ]
+        }
+      }
+    }
+  },
+  "7": {
+    "a": {
+      "topics_tested": [
+        "Acid-Base Chemistry"
+      ],
+      "syllabus_content": [
+        "Ammonia"
+      ],
+      "learning_outcomes": [
+        "Describe the use of nitrogen (from air) and hydrogen (from cracking of crude oil) in the manufacture of ammonia"
+      ]
+    },
+    "b": {
+      "topics_tested": [],
+      "syllabus_content": [],
+      "learning_outcomes": [],
+      "subparts": {
+        "i": {
+          "topics_tested": [
+            "Rate of Reactions"
+          ],
+          "syllabus_content": [
+            "Factors affecting rate and catalysis"
+          ],
+          "learning_outcomes": [
+            "Describe the effect of temperature on reaction rates and explain these effects in terms of collisions between reacting particles"
+          ]
+        },
+        "ii": {
+          "topics_tested": [
+            "Acid-Base Chemistry"
+          ],
+          "syllabus_content": [
+            "Ammonia"
+          ],
+          "learning_outcomes": [
+            "Interpret data relating to the conditions used in industry for processes involving reversible reactions, e.g. the Haber Process"
+          ]
+        },
+        "iii": {
+          "topics_tested": [
+            "Rate of Reactions"
+          ],
+          "syllabus_content": [
+            "Factors affecting rate and catalysis"
+          ],
+          "learning_outcomes": [
+            "Define the term catalyst and describe the effect of catalysts on reaction rates"
+          ]
+        },
+        "iv": {
+          "topics_tested": [
+            "Acid-Base Chemistry"
+          ],
+          "syllabus_content": [
+            "Ammonia"
+          ],
+          "learning_outcomes": [
+            "State that some chemical reactions are reversible (e.g. manufacture of ammonia) and explain their impact on achievable yield"
+          ]
+        }
+      }
+    }
+  },
+  "8": {
+    "a": {
+      "topics_tested": [
+        "Experimental Chemistry"
+      ],
+      "syllabus_content": [
+        "Experimental Design"
+      ],
+      "learning_outcomes": [
+        "Suggest suitable apparatus, given relevant information, for a variety of simple experiments, including drying and collection of gases (drying agents limited to calcium oxide, concentrated sulfuric acid and fused calcium chloride)"
+      ]
+    },
+    "b": {
+      "topics_tested": [
+        "Patterns in the Periodic Table"
+      ],
+      "syllabus_content": [
+        "Group Properties"
+      ],
+      "learning_outcomes": [
+        "Describe Group 18 elements as mono-atomic and unreactive, important in providing an inert environment",
+        "Describe the lack of reactivity of noble gases in terms of their electronic configurations"
+      ]
+    },
+    "c": {
+      "topics_tested": [],
+      "syllabus_content": [],
+      "learning_outcomes": [],
+      "subparts": {
+        "i": {
+          "topics_tested": [
+            "The Particulate Nature of Matter"
+          ],
+          "syllabus_content": [
+            "Kinetic Particle Theory"
+          ],
+          "learning_outcomes": [
+            "State qualitatively the effect of molecular mass on the rate of diffusion and explain the dependence of rate of diffusion on temperature"
+          ]
+        },
+        "ii": {
+          "topics_tested": [
+            "The Particulate Nature of Matter"
+          ],
+          "syllabus_content": [
+            "Kinetic Particle Theory"
+          ],
+          "learning_outcomes": [
+            "Describe the solid, liquid and gaseous states of matter and explain their inter-conversion in terms of the kinetic particle theory and of the energy changes involved"
+          ]
+        },
+        "iii": {
+          "topics_tested": [
+            "Experimental Chemistry"
+          ],
+          "syllabus_content": [
+            "Methods of Purification and Analysis"
+          ],
+          "learning_outcomes": [
+            "Interpret paper chromatograms including comparison with ‘known’ samples and the use of Rf values"
+          ]
+        },
+        "iv": {
+          "topics_tested": [
+            "Experimental Chemistry"
+          ],
+          "syllabus_content": [
+            "Methods of Purification and Analysis"
+          ],
+          "learning_outcomes": [
+            "Interpret paper chromatograms including comparison with ‘known’ samples and the use of Rf values"
+          ]
+        }
+      }
+    },
+    "d": {
+      "topics_tested": [],
+      "syllabus_content": [],
+      "learning_outcomes": [],
+      "subparts": {
+        "i": {
+          "topics_tested": [
+            "Experimental Chemistry"
+          ],
+          "syllabus_content": [
+            "Methods of Purification and Analysis"
+          ],
+          "learning_outcomes": [
+            "Interpret paper chromatograms including comparison with ‘known’ samples and the use of Rf values"
+          ]
+        },
+        "ii": {
+          "topics_tested": [
+            "Experimental Chemistry"
+          ],
+          "syllabus_content": [
+            "Methods of Purification and Analysis"
+          ],
+          "learning_outcomes": [
+            "Interpret paper chromatograms including comparison with ‘known’ samples and the use of Rf values"
+          ]
+        }
+      }
+    }
+  },
+  "9either": {
+    "a": {
+      "topics_tested": [
+        "Redox Chemistry"
+      ],
+      "syllabus_content": [
+        "Electrochemistry"
+      ],
+      "learning_outcomes": [
+        "Describe production of electrical energy from simple cells linked to the reactivity series and redox reactions",
+        "Describe electroplating of metals and state one use",
+        "Construct ionic equations for reactions occurring at electrodes during electrolysis"
+      ]
+    },
+    "b": {
+      "topics_tested": [
+        "Redox Chemistry"
+      ],
+      "syllabus_content": [
+        "Electrochemistry"
+      ],
+      "learning_outcomes": [
+        "Describe production of electrical energy from simple cells linked to the reactivity series and redox reactions"
+      ]
+    },
+    "c": {
+      "topics_tested": [
+        "Redox Chemistry"
+      ],
+      "syllabus_content": [
+        "Electrochemistry"
+      ],
+      "learning_outcomes": [
+        "Describe production of electrical energy from simple cells linked to the reactivity series and redox reactions",
+        "Place specified metals in order of reactivity using given reaction evidence"
+      ]
+    },
+    "d": {
+      "topics_tested": [],
+      "syllabus_content": [],
+      "learning_outcomes": [],
+      "subparts": {
+        "i": {
+          "topics_tested": [
+            "Qualitative Analysis"
+          ],
+          "syllabus_content": [
+            "Qualitative analysis of cations, anions and gases"
+          ],
+          "learning_outcomes": [
+            "Describe the use of precipitation tests to identify aqueous cations or anions through characteristic insoluble products"
+          ]
+        },
+        "ii": {
+          "topics_tested": [
+            "Redox Chemistry"
+          ],
+          "syllabus_content": [
+            "Electrochemistry"
+          ],
+          "learning_outcomes": [
+            "Describe electroplating of metals and state one use",
+            "Apply selective discharge ideas (cations, anions, concentration effects) to predict electrolysis products with inert electrodes"
+          ]
+        }
+      }
+    }
+  },
+  "9or": {
+    "a": {
+      "topics_tested": [
+        "Redox Chemistry"
+      ],
+      "syllabus_content": [
+        "Electrochemistry"
+      ],
+      "learning_outcomes": [
+        "Describe electrolysis as the conduction of electricity through an ionic compound when molten or in solution, leading to chemical changes at the electrodes",
+        "Construct ionic equations for reactions occurring at electrodes during electrolysis",
+        "Predict the likely products of the electrolysis of aqueous electrolytes using inert or reactive electrodes"
+      ]
+    },
+    "b": {
+      "topics_tested": [],
+      "syllabus_content": [],
+      "learning_outcomes": [],
+      "subparts": {
+        "i": {
+          "topics_tested": [
+            "Redox Chemistry"
+          ],
+          "syllabus_content": [
+            "Electrochemistry"
+          ],
+          "learning_outcomes": [
+            "Apply selective discharge ideas (cations, anions, concentration effects) to predict electrolysis products with inert electrodes"
+          ]
+        },
+        "ii": {
+          "topics_tested": [
+            "Patterns in the Periodic Table",
+            "Redox Chemistry"
+          ],
+          "syllabus_content": [
+            "Reactivity Series",
+            "Electrochemistry"
+          ],
+          "learning_outcomes": [
+            "Place specified metals in order of reactivity using given reaction evidence",
+            "Relate the reactivity series to displacement reactions that occur in aqueous solutions"
+          ]
+        }
+      }
+    }
+  }
+}
