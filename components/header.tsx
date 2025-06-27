@@ -7,13 +7,6 @@ This client component provides the header for the app.
 "use client"
 
 import { Button } from "@/components/ui/button"
-import {
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  SignUpButton,
-  UserButton
-} from "@clerk/nextjs"
 import { Menu, Rocket, X } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
@@ -24,8 +17,6 @@ const navLinks = [
   { href: "/pricing", label: "Pricing" },
   { href: "/contact", label: "Contact" }
 ]
-
-const signedInLinks = [{ href: "/todo", label: "Todo" }]
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -56,7 +47,7 @@ export default function Header() {
         <div className="flex items-center space-x-2 hover:cursor-pointer hover:opacity-80">
           <Rocket className="size-6" />
           <Link href="/" className="text-xl font-bold">
-            Mckay's App Template
+            David's App Template
           </Link>
         </div>
 
@@ -70,36 +61,10 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-
-          <SignedIn>
-            {signedInLinks.map(link => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="rounded-full px-3 py-1 hover:opacity-80"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </SignedIn>
         </nav>
 
         <div className="flex items-center space-x-4">
           <ThemeSwitcher />
-
-          <SignedOut>
-            <SignInButton>
-              <Button variant="outline">Login</Button>
-            </SignInButton>
-
-            <SignUpButton>
-              <Button className="bg-blue-500 hover:bg-blue-600">Sign Up</Button>
-            </SignUpButton>
-          </SignedOut>
-
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
 
           <div className="md:hidden">
             <Button
@@ -141,19 +106,6 @@ export default function Header() {
                 </Link>
               </li>
             ))}
-            <SignedIn>
-              {signedInLinks.map(link => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="block hover:underline"
-                    onClick={toggleMenu}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </SignedIn>
           </ul>
         </nav>
       )}

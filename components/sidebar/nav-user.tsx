@@ -1,22 +1,20 @@
 /*
 <ai_context>
-This client component provides a user button for the sidebar via Clerk.
+This client component provides a user section for the sidebar.
 </ai_context>
 */
 
 "use client"
 
 import { SidebarMenu, SidebarMenuItem } from "@/components/ui/sidebar"
-import { UserButton, useUser } from "@clerk/nextjs"
+import { User } from "lucide-react"
 
 export function NavUser() {
-  const { user } = useUser()
-
   return (
     <SidebarMenu>
       <SidebarMenuItem className="flex items-center gap-2 font-medium">
-        <UserButton afterSignOutUrl="/" />
-        {user?.fullName}
+        <User className="size-4" />
+        Guest User
       </SidebarMenuItem>
     </SidebarMenu>
   )
