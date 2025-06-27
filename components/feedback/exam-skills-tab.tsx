@@ -82,41 +82,6 @@ export function ExamSkillsTab({ examSkills, className }: ExamSkillsTabProps) {
         />
       </div>
 
-      {/* Quick Actions */}
-      {actionableItems.length > 0 && (
-        <div className="border-t pt-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
-          <div className="grid gap-3">
-            {actionableItems.map((item, index) => (
-              <div 
-                key={index}
-                className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border hover:bg-gray-100 transition-colors"
-              >
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-medium text-gray-900 truncate">
-                    {item.text}
-                  </p>
-                  <p className="text-xs text-gray-500 capitalize">
-                    {item.type === 'keyword' ? 'Missing Keyword' : 'Action Item'}
-                  </p>
-                </div>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => copyTextToClipboard(item.text, `${item.type}-${index}`)}
-                  className="ml-2 h-8 w-8 p-0"
-                >
-                  {copiedItem === `${item.type}-${index}` ? (
-                    <Check className="h-4 w-4 text-green-600" />
-                  ) : (
-                    <Copy className="h-4 w-4" />
-                  )}
-                </Button>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
 
       {/* Copy All Button */}
       <div className="border-t pt-6">

@@ -67,28 +67,21 @@ export function QuestionGrid({ questions, className }: QuestionGridProps) {
               href={`/question/${question.id}`}
               className="group block"
             >
-              <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg hover:border-blue-300 transition-all duration-200 group-hover:scale-[1.02]">
+              <div className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg hover:border-blue-300 transition-all duration-200 group-hover:scale-[1.02]">
                 {/* Question Header */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-2">
-                    <h3 className="text-lg font-semibold text-gray-900">
-                      Question {question.id.replace('q', '').replace(/^0+/, '')}
-                    </h3>
-                    <span className="text-sm bg-blue-100 text-blue-700 px-2 py-1 rounded">
+                <div className="p-6 pb-4">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    Question {question.id.replace('q', '').replace(/^0+/, '')}
+                  </h3>
+                </div>
+
+                {/* Question Footer */}
+                <div className="px-6 py-3 bg-gray-50 border-t border-gray-100">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600">
                       {question.marks} marks
                     </span>
                   </div>
-                </div>
-
-                {/* Footer */}
-                <div className="flex items-center justify-between text-xs text-gray-500">
-                  <Button 
-                    variant="ghost" 
-                    size="sm"
-                    className="text-blue-600 hover:text-blue-700 p-0 h-auto font-medium"
-                  >
-                    Analyze →
-                  </Button>
                 </div>
               </div>
             </Link>

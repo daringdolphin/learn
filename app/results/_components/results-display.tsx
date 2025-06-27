@@ -117,6 +117,11 @@ export function ResultsDisplay({ question }: ResultsDisplayProps) {
               Back to Questions
             </Link>
           </Button>
+          <Button size="sm" asChild>
+            <Link href="/">
+              Analyze Another Question
+            </Link>
+          </Button>
         </div>
       </div>
 

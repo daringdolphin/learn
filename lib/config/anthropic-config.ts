@@ -1,9 +1,9 @@
 /**
- * Configuration for OpenAI API integration
+ * Configuration for Anthropic Claude API integration
  */
-export const OPENAI_CONFIG = {
+export const ANTHROPIC_CONFIG = {
   // Analysis settings
-  MAX_RETRIES: 2,
+  MAX_RETRIES: 1,
   ANALYSIS_TIMEOUT: 120000, // 120 seconds
 
   // Image processing settings
@@ -15,13 +15,16 @@ export const OPENAI_CONFIG = {
   DOWNLOAD_TIMEOUT: 15000, // 15 seconds
   
   // Model settings
-  MODEL: 'gpt-4o',
+  MODEL: 'claude-3-5-sonnet-20241022',
   MAX_TOKENS: 1500,
   TEMPERATURE: 0.1,
   
   // Retry backoff settings
   INITIAL_RETRY_DELAY: 1000, // 1 second
   MAX_RETRY_DELAY: 8000, // 8 seconds
+
+  // API settings
+  API_VERSION: '2023-06-01',
 } as const
 
-export type OpenAIConfig = typeof OPENAI_CONFIG 
+export type AnthropicConfig = typeof ANTHROPIC_CONFIG 

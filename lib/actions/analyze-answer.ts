@@ -4,17 +4,21 @@ import { db } from '@/db/db'
 import { questionsTable, modelAnswerImagesTable } from '@/db/schema'
 import { eq } from 'drizzle-orm'
 import { supabase } from '@/lib/api/supabase'
-import { analyzeChemistryAnswer } from '@/lib/api/openai'
+import { analyzeChemistryAnswer, getDefaultModelProvider } from '@/lib/api/llm-analyzer'
 import { processUploadedImage, MAX_FILE_SIZE, ALLOWED_MIME_TYPES } from '@/lib/utils/image-processing'
 import { logError } from '@/lib/utils/error-handling'
-import { ActionState, AnalysisResult, ModelAnswerPart } from '@/types'
+import { ActionState, AnalysisResult, ModelAnswerPart, ModelProvider } from '@/types'
 
 /**
  * Server action for analyzing chemistry answers
  * @param formData - FormData containing questionId and image file
+ * @param modelProvider - Optional model provider (defaults to environment setting)
  * @returns Promise<ActionState<AnalysisResult>>
  */
-export async function analyzeAnswerAction(formData: FormData): Promise<ActionState<AnalysisResult>> {
+export async function analyzeAnswerAction(
+  formData: FormData, 
+  modelProvider?: ModelProvider
+): Promise<ActionState<AnalysisResult>> {
   try {
     // Validate and extract form data
     const questionId = formData.get('questionId') as string
@@ -96,16 +100,18 @@ export async function analyzeAnswerAction(formData: FormData): Promise<ActionSta
       }
     }
 
-    // Call GPT-4o for analysis
+    // Call LLM for analysis
+    const selectedModelProvider = modelProvider || getDefaultModelProvider()
     let analysisResult: AnalysisResult
     try {
       analysisResult = await analyzeChemistryAnswer({
         studentImageDataUrl: processedImage.dataUrl,
         modelAnswerJson: question.modelAnswerJson as ModelAnswerPart[],
-        referenceImageUrls
+        referenceImageUrls,
+        modelProvider: selectedModelProvider
       })
     } catch (analysisError) {
-      // Handle specific OpenAI errors
+      // Handle specific LLM errors
       if (analysisError instanceof Error) {
         if (analysisError.message === 'UnreadableHandwriting') {
           return {
@@ -120,9 +126,25 @@ export async function analyzeAnswerAction(formData: FormData): Promise<ActionSta
             message: 'Analysis took too long to complete. Please try again.'
           }
         }
+
+        // Handle rate limiting errors
+        if (analysisError.message.includes('Rate limit exceeded')) {
+          return {
+            isSuccess: false,
+            message: 'Service is currently busy. Please try again in a few minutes.'
+          }
+        }
+
+        // Handle image size errors
+        if (analysisError.message.includes('Image too large')) {
+          return {
+            isSuccess: false,
+            message: 'Image is too large. Please try with a smaller image.'
+          }
+        }
       }
 
-      logError(analysisError instanceof Error ? analysisError : new Error(String(analysisError)), 'OpenAI Analysis')
+      logError(analysisError instanceof Error ? analysisError : new Error(String(analysisError)), `LLM Analysis (${selectedModelProvider})`)
       return {
         isSuccess: false,
         message: 'Failed to analyze the answer. Please try again.'

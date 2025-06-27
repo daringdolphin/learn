@@ -179,12 +179,12 @@ export function QuestionAnalysis({ question }: QuestionAnalysisProps) {
           {isAnalyzing ? (
             <>
               <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
-              Analyzing...
+              Analyzing your answer...
             </>
           ) : (
             <>
               <Send className="h-4 w-4 mr-2" />
-              Analyze Answer
+              Give me feedback!
             </>
           )}
         </Button>
@@ -193,8 +193,7 @@ export function QuestionAnalysis({ question }: QuestionAnalysisProps) {
       {/* Processing Info */}
       {isAnalyzing && (
         <div className="text-center text-sm text-gray-600 space-y-1">
-          <p>AI is analyzing your answer against the model solution...</p>
-          <p>This may take up to 2 minutes.</p>
+          <p>Analyzing your answer against the model solution...</p>
         </div>
       )}
     </div>

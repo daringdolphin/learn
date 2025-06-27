@@ -14,7 +14,7 @@ interface FeedbackTabsProps {
 type TabType = 'exam-skills' | 'conceptual'
 
 export function FeedbackTabs({ analysisResult, className }: FeedbackTabsProps) {
-  const [activeTab, setActiveTab] = useState<TabType>('exam-skills')
+  const [activeTab, setActiveTab] = useState<TabType>('conceptual')
 
   return (
     <div className={cn('w-full', className)}>

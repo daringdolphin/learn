@@ -1,3 +1,5 @@
+import type { ModelAnswerPart } from './question-types'
+
 export interface AnalysisResult {
   examSkills: ExamSkills
   conceptualUnderstanding: ConceptualUnderstanding
@@ -10,6 +12,18 @@ export interface ExamSkills {
 export interface ConceptualUnderstanding {
   content: string // Markdown-formatted feedback for conceptual understanding
 }
+
+// Model Provider Types
+export type ModelProvider = 'openai' | 'anthropic'
+
+export interface AnalysisParams {
+  studentImageDataUrl: string
+  modelAnswerJson: ModelAnswerPart[]
+  referenceImageUrls: string[]
+  modelProvider?: ModelProvider // Optional, defaults to 'openai'
+}
+
+
 
 /*
 Example response structure:

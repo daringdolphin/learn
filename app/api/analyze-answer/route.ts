@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { analyzeAnswerAction } from '@/lib/actions/analyze-answer'
 import { createErrorResponse, logError } from '@/lib/utils/error-handling'
+import { ModelProvider } from '@/types'
 
 export async function POST(request: NextRequest) {
   try {
@@ -18,8 +19,12 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Extract model provider from query parameters or headers
+    const modelProvider = request.nextUrl.searchParams.get('modelProvider') as ModelProvider || 
+                         request.headers.get('x-model-provider') as ModelProvider
+
     // Call the server action
-    const result = await analyzeAnswerAction(formData)
+    const result = await analyzeAnswerAction(formData, modelProvider)
 
     // Handle different response scenarios
     if (result.isSuccess) {
@@ -47,6 +52,11 @@ export async function POST(request: NextRequest) {
         statusCode = 422 // Unprocessable Entity
       } else if (result.message.includes('took too long') || result.message.includes('timed out')) {
         statusCode = 504 // Gateway Timeout
+      } else if (result.message.includes('Service is currently busy') || 
+                 result.message.includes('Rate limit exceeded')) {
+        statusCode = 429 // Too Many Requests
+      } else if (result.message.includes('Image is too large')) {
+        statusCode = 413 // Payload Too Large
       }
 
       return NextResponse.json(

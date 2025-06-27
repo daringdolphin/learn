@@ -1,5 +1,5 @@
 import { OpenAI } from 'openai'
-import { AnalysisResult, ModelAnswerPart } from '@/types'
+import { AnalysisResult, AnalysisParams } from '@/types'
 import { downloadAndOptimizeImage } from '@/lib/utils/image-processing'
 import { OPENAI_CONFIG } from '@/lib/config/openai-config'
 import { SYSTEM_PROMPT } from '@/prompts/analysis-prompt'
@@ -7,12 +7,6 @@ import { SYSTEM_PROMPT } from '@/prompts/analysis-prompt'
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
 })
-
-export interface AnalyzeChemistryAnswerParams {
-  studentImageDataUrl: string
-  modelAnswerJson: ModelAnswerPart[]
-  referenceImageUrls: string[]
-}
 
 
 
@@ -52,7 +46,7 @@ export async function analyzeChemistryAnswer({
   studentImageDataUrl,
   modelAnswerJson,
   referenceImageUrls
-}: AnalyzeChemistryAnswerParams): Promise<AnalysisResult> {
+}: AnalysisParams): Promise<AnalysisResult> {
   const maxRetries = OPENAI_CONFIG.MAX_RETRIES
   let lastError: Error | null = null
 
@@ -145,7 +139,7 @@ async function performAnalysis({
   studentImageDataUrl,
   modelAnswerJson,
   referenceImageUrls
-}: AnalyzeChemistryAnswerParams): Promise<AnalysisResult> {
+}: AnalysisParams): Promise<AnalysisResult> {
   // Build the message content array
   const messageContent: OpenAI.Chat.Completions.ChatCompletionContentPart[] = [
     {
