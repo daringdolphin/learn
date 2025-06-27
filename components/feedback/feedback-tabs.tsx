@@ -21,6 +21,18 @@ export function FeedbackTabs({ analysisResult, className }: FeedbackTabsProps) {
       {/* Tab Navigation */}
       <div className="border-b border-gray-200 mb-6">
         <nav className="-mb-px flex space-x-8" aria-label="Tabs">
+        <button
+            onClick={() => setActiveTab('conceptual')}
+            className={cn(
+              'whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm transition-colors duration-200',
+              activeTab === 'conceptual'
+                ? 'border-blue-500 text-blue-600'
+                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+            )}
+            aria-selected={activeTab === 'conceptual'}
+          >
+            Conceptual Understanding
+          </button>
           <button
             onClick={() => setActiveTab('exam-skills')}
             className={cn(
@@ -33,28 +45,16 @@ export function FeedbackTabs({ analysisResult, className }: FeedbackTabsProps) {
           >
             Exam Skills
           </button>
-          <button
-            onClick={() => setActiveTab('conceptual')}
-            className={cn(
-              'whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm transition-colors duration-200',
-              activeTab === 'conceptual'
-                ? 'border-blue-500 text-blue-600'
-                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-            )}
-            aria-selected={activeTab === 'conceptual'}
-          >
-            Conceptual Understanding
-          </button>
         </nav>
       </div>
 
       {/* Tab Content */}
       <div className="min-h-[400px]">
+        {activeTab === 'conceptual' && (
+        <ConceptualTab conceptualUnderstanding={analysisResult.conceptualUnderstanding} />
+        )}
         {activeTab === 'exam-skills' && (
           <ExamSkillsTab examSkills={analysisResult.examSkills} />
-        )}
-        {activeTab === 'conceptual' && (
-          <ConceptualTab conceptualUnderstanding={analysisResult.conceptualUnderstanding} />
         )}
       </div>
     </div>

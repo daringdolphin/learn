@@ -125,27 +125,7 @@ export function QuestionAnalysis({ question }: QuestionAnalysisProps) {
             </span>
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-4">
-          <div>
-            <p className="text-sm text-gray-600 mb-2">
-              <strong>Parts:</strong> {getQuestionSummary()}
-            </p>
-          </div>
-          
-          {/* Question parts preview */}
-          <div className="space-y-3">
-            {question.modelAnswerJson.map((part, index) => (
-              <div key={index} className="border-l-4 border-blue-200 pl-4">
-                <h4 className="font-medium text-gray-900">
-                  Part {part.part}{part.subpart ? `(${part.subpart})` : ''} - {part.marks} marks
-                </h4>
-                <p className="text-sm text-gray-700 mt-1">
-                  {part.questionText}
-                </p>
-              </div>
-            ))}
-          </div>
-        </CardContent>
+        
       </Card>
 
       {/* Camera Capture */}

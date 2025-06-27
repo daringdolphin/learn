@@ -10,13 +10,13 @@ interface ImagePreviewProps {
 }
 
 export function ImagePreview({ file, className }: ImagePreviewProps) {
-  const [imageUrl, setImageUrl] = useState<string>('')
+  const [imageUrl, setImageUrl] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string>('')
 
   useEffect(() => {
     if (!file) {
-      setImageUrl('')
+      setImageUrl(null)
       return
     }
 
@@ -67,6 +67,17 @@ export function ImagePreview({ file, className }: ImagePreviewProps) {
         <div className="text-center">
           <AlertCircle className="h-12 w-12 mx-auto text-red-400 mb-2" />
           <p className="text-sm text-red-600">{error}</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (!imageUrl) {
+    return (
+      <div className={cn('flex items-center justify-center p-8 bg-gray-50 rounded-lg border-2 border-dashed', className)}>
+        <div className="text-center">
+          <FileImage className="h-12 w-12 mx-auto text-gray-400 mb-2" />
+          <p className="text-sm text-gray-600">Preparing image...</p>
         </div>
       </div>
     )

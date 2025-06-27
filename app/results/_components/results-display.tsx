@@ -118,23 +118,6 @@ export function ResultsDisplay({ question }: ResultsDisplayProps) {
             </Link>
           </Button>
         </div>
-        
-        <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" onClick={handleShareResults}>
-            <Share2 className="h-4 w-4 mr-2" />
-            Share
-          </Button>
-          
-          <Button variant="outline" size="sm" onClick={handleDownload}>
-            <Download className="h-4 w-4 mr-2" />
-            Print/Download
-          </Button>
-          
-          <Button variant="outline" size="sm" onClick={handleRetryAnalysis}>
-            <RotateCcw className="h-4 w-4 mr-2" />
-            Retry Analysis
-          </Button>
-        </div>
       </div>
 
       {/* Question Context */}
@@ -147,20 +130,12 @@ export function ResultsDisplay({ question }: ResultsDisplayProps) {
             </span>
           </CardTitle>
         </CardHeader>
-        <CardContent>
-          <p className="text-sm text-gray-600">
-            <strong>Parts:</strong> {getQuestionSummary()}
-          </p>
-        </CardContent>
       </Card>
 
       {/* Analysis Results */}
       <Card>
         <CardHeader>
           <CardTitle>Your Feedback</CardTitle>
-          <p className="text-sm text-gray-600">
-            AI-powered analysis comparing your answer to the model solution
-          </p>
         </CardHeader>
         <CardContent>
           <FeedbackTabs analysisResult={analysisResult} />
@@ -173,11 +148,6 @@ export function ResultsDisplay({ question }: ResultsDisplayProps) {
           <Link href="/">
             Analyze Another Question
           </Link>
-        </Button>
-        
-        <Button variant="outline" size="lg" onClick={handleRetryAnalysis}>
-          <RotateCcw className="h-4 w-4 mr-2" />
-          Retry This Question
         </Button>
       </div>
 

@@ -12,12 +12,8 @@ export default async function HomePage() {
         {/* Header */}
         <div className="text-center space-y-4">
           <h1 className="text-4xl font-bold text-gray-900">
-            Chemistry Exam Analysis
+            Sec 4 Chem Mock Exam
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Get AI-powered feedback on your Secondary-4 chemistry exam answers. 
-            Select a question below to start analyzing your work.
-          </p>
         </div>
 
         {/* Questions Grid */}

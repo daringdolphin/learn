@@ -112,7 +112,7 @@ export function ConceptualTab({ conceptualUnderstanding, className }: Conceptual
       </div>
 
       {/* Conceptual Items Summary */}
-      {conceptualItems.length > 0 && (
+      {/* {conceptualItems.length > 0 && (
         <div className="border-t pt-6">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Conceptual Overview</h3>
           <div className="grid gap-3">
@@ -163,7 +163,7 @@ export function ConceptualTab({ conceptualUnderstanding, className }: Conceptual
             ))}
           </div>
         </div>
-      )}
+      )} */}
 
       {/* Copy All Button */}
       <div className="border-t pt-6">

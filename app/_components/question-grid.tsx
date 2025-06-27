@@ -50,29 +50,7 @@ export function QuestionGrid({ questions, className }: QuestionGridProps) {
 
   return (
     <div className={cn('space-y-6', className)}>
-      {/* Search Bar */}
-      <div className="relative max-w-md mx-auto">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-        <Input
-          type="text"
-          placeholder="Search questions..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="pl-10"
-        />
-      </div>
-
-      {/* Results Count */}
-      <div className="text-center text-sm text-gray-600">
-        {filteredQuestions.length === questions.length ? (
-          <p>Showing all {questions.length} questions</p>
-        ) : (
-          <p>
-            Showing {filteredQuestions.length} of {questions.length} questions
-          </p>
-        )}
-      </div>
-
+      
       {/* Questions Grid */}
       {filteredQuestions.length === 0 ? (
         <div className="text-center py-12">
@@ -100,21 +78,6 @@ export function QuestionGrid({ questions, className }: QuestionGridProps) {
                       {question.marks} marks
                     </span>
                   </div>
-                  <FileText className="h-5 w-5 text-gray-400 group-hover:text-blue-600" />
-                </div>
-
-                {/* Question Parts */}
-                <div className="mb-3">
-                  <p className="text-sm text-gray-600">
-                    <strong>Parts:</strong> {getQuestionSummary(question)}
-                  </p>
-                </div>
-
-                {/* Question Preview */}
-                <div className="mb-4">
-                  <p className="text-sm text-gray-700 line-clamp-3">
-                    {getQuestionPreview(question)}
-                  </p>
                 </div>
 
                 {/* Footer */}
