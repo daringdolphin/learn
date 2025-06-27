@@ -31,7 +31,7 @@ export function FeedbackTabs({ analysisResult, className }: FeedbackTabsProps) {
             )}
             aria-selected={activeTab === 'conceptual'}
           >
-            Conceptual Understanding
+            Knowledge Gaps
           </button>
           <button
             onClick={() => setActiveTab('exam-skills')}
