@@ -1,0 +1,903 @@
+[
+    {
+        "question_number": "1",
+        "part": "a",
+        "subpart": "",
+        "question_text": "Which equation shows a reaction in which a white precipitate is formed?",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "B",
+                "keywords": "B",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "1",
+        "part": "b",
+        "subpart": "",
+        "question_text": "Which equation shows a reaction that takes place in an electrolytic cell?",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "G",
+                "keywords": "G",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "1",
+        "part": "c",
+        "subpart": "",
+        "question_text": "Which equation shows a thermal decomposition reaction?",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "A",
+                "keywords": "A",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "1",
+        "part": "d",
+        "subpart": "",
+        "question_text": "Which equation shows a redox reaction with an acidic compound formed?",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "E",
+                "keywords": "E",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "1",
+        "part": "e",
+        "subpart": "",
+        "question_text": "Which equation shows a reaction in which a black substance reacts to give a blue solution?",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "C",
+                "keywords": "C",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "2",
+        "part": "a",
+        "subpart": "",
+        "question_text": "By classifying the substances above, explain the differences between an element, compound, and a mixture.",
+        "marks": "3",
+        "answers_for_each_mark": [
+            {
+                "text": "Iron, chromium and nickel are elements. An element is a pure substance that cannot be broken down into simpler substances by chemical means. [1]",
+                "keywords": "pure substance, cannot be broken down, chemical means",
+                "notes": "Annotation: 'no need' referring to '(two or more)' being unnecessary"
+            },
+            {
+                "text": "Iron(III) oxide is an ionic compound. A compound is a pure substance containing two or more elements that are chemically combined in a fixed ratio. Iron(III) oxide can be broken down to extract the element iron. [1]",
+                "keywords": "compound, pure substance, two or more elements, chemically combined, fixed ratio",
+                "notes": ""
+            },
+            {
+                "text": "Steel is an alloy. An alloy is a mixture of a metal and at least one other element physically combined in random proportions. This type of steel is an alloy of iron, carbon, chromium and nickel. [1]",
+                "keywords": "mixture, metal, at least one other element, physically combined, random proportions",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "2",
+        "part": "b",
+        "subpart": "",
+        "question_text": "A student states that this type of steel contains twice as many chromium atoms as nickel atoms.\n\nIs this statement correct?\n\nExplain your reasoning.",
+        "marks": "2",
+        "answers_for_each_mark": [
+            {
+                "text": "The statement is correct. By calculating the empirical formula from given percentage mass data, the mole ratio between Cr and Ni is approximately 2:1. [1]",
+                "keywords": "mole ratio, 2:1",
+                "notes": "Annotation: 'or show by math that it is 2:1 ratio'"
+            },
+            {
+                "text": "Number of Cr atoms is thus about twice that Ni atoms. [1]",
+                "keywords": "twice",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "2",
+        "part": "c",
+        "subpart": "",
+        "question_text": "Give reasons to explain why Fig. 2.1 cannot be used to represent the arrangement of particles in this type of steel.",
+        "marks": "3",
+        "answers_for_each_mark": [
+            {
+                "text": "This type of steel contains four different elements. As such, it should have four different types of particles. [1]",
+                "keywords": "four different particles",
+                "notes": ""
+            },
+            {
+                "text": "In addition, the particles (elements) should come in different sizes. [1]",
+                "keywords": "different size",
+                "notes": ""
+            },
+            {
+                "text": "Steel should also have an irregular arrangement of atoms in the structure. [1]",
+                "keywords": "irregular arrangement",
+                "notes": "Annotation: 'disorderly' is acceptable"
+            }
+        ]
+    },
+    {
+        "question_number": "2",
+        "part": "d",
+        "subpart": "",
+        "question_text": "Explain, in terms of the arrangement of atoms, why steel has different physical properties to iron.",
+        "marks": "2",
+        "answers_for_each_mark": [
+            {
+                "text": "In pure iron, the metal atoms are of the same size and thus pure iron has a regular structure. If enough force is applied, the layers of atoms can slide over one another easily. As such, pure iron is malleable and ductile. [1]",
+                "keywords": "same size, regular structure, layers of atoms can slide over one another easily",
+                "notes": "Annotation: 'ok: orderly instead of regular'"
+            },
+            {
+                "text": "In steel (an alloy), the atoms are of different sizes. The regular lattice arrangement is disrupted. The layers of atoms do not slide over each other so easily when a force is applied. As such, steel is harder and stronger than pure iron. [1]",
+                "keywords": "different sizes, disrupted, do not slide over each other",
+                "notes": "Annotation: 'ok: harder for layers to slide over each other'"
+            }
+        ]
+    },
+    {
+        "question_number": "3",
+        "part": "a",
+        "subpart": "i",
+        "question_text": "Explain why the activation energies for both reactions are different.",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "Activation energy involves the bond-breaking of H2 with Cl2 and F2. The energy absorbed to break the Cl2 bond is different from the energy absorbed to break the F2 bond [1]",
+                "keywords": "energy absorbed, different",
+                "notes": "Annotation: 'ok: taken in'"
+            }
+        ]
+    },
+    {
+        "question_number": "3",
+        "part": "a",
+        "subpart": "ii",
+        "question_text": "Calculate the energy released during the formation of bonds for both reactions 1 and 2.",
+        "marks": "2",
+        "answers_for_each_mark": [
+            {
+                "text": "679 + 185 = 864",
+                "keywords": "",
+                "notes": ""
+            },
+            {
+                "text": "595 + 543 = 1138",
+                "keywords": "",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "3",
+        "part": "a",
+        "subpart": "iii",
+        "question_text": "From your results in (a)(ii), state and explain whether the hydrogen chloride bond or hydrogen fluoride bond is stronger.",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "HF bond is stronger. [1]",
+                "keywords": "HF bond is stronger",
+                "notes": ""
+            },
+            {
+                "text": "More energy is released during bond forming of HF",
+                "keywords": "more energy is released",
+                "notes": "Annotation: 'ok: given out'"
+            }
+        ]
+    },
+    {
+        "question_number": "4",
+        "part": "a",
+        "subpart": "i",
+        "question_text": "Explain the observations seen in test tubes A, B and C.",
+        "marks": "3",
+        "answers_for_each_mark": [
+            {
+                "text": "test tube A – rusting takes place due to presence of oxygen and water [1]",
+                "keywords": "presence of oxygen and water",
+                "notes": ""
+            },
+            {
+                "text": "test tube B – rusting does not take place due to absence of water as water is absorbed by calcium chloride [1]",
+                "keywords": "absence of water, absorbed by calcium chloride",
+                "notes": "Annotation: 'ok: calcium chloride is a drying agent'"
+            },
+            {
+                "text": "test tube C – rusting does not take place due to absence of oxygen (air) in boiled water [1]",
+                "keywords": "absence of oxygen, boiled water",
+                "notes": "Note: Do not accept if the reason is just oil, need to be about boiled water"
+            }
+        ]
+    },
+    {
+        "question_number": "4",
+        "part": "a",
+        "subpart": "ii",
+        "question_text": "In test tube D, a piece of zinc metal is attached to the iron nail. Suggest, with a reason, the observation that would be made in the test tube after some time.",
+        "marks": "3",
+        "answers_for_each_mark": [
+            {
+                "text": "indicator remains yellow [1]",
+                "keywords": "indicator remains yellow",
+                "notes": ""
+            },
+            {
+                "text": "Zinc is more reactive than iron [1]",
+                "keywords": "more reactive than iron",
+                "notes": ""
+            },
+            {
+                "text": "and corrodes / reacts with oxygen and water instead of iron [1]",
+                "keywords": "corrodes / reacts with oxygen and water instead of iron",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "4",
+        "part": "b",
+        "subpart": "",
+        "question_text": "Predict the observations when nickel is added to separate solutions of zinc nitrate and copper(II) nitrate.\n\nWrite a chemical equation for one of the reactions that takes place.",
+        "marks": "3",
+        "answers_for_each_mark": [
+            {
+                "text": "When nickel is added to copper(II) nitrate solution, the blue solution turn green with pinkish brown coating of copper on the nickel metal [1]",
+                "keywords": "blue solution turn green, pinkish brown coating",
+                "notes": "Annotation: ok: pink / reddish brown"
+            },
+            {
+                "text": "Ni + Cu(NO3)2 ⟶ Ni(NO3)2 + Cu [1]",
+                "keywords": "",
+                "notes": ""
+            },
+            {
+                "text": "When nickel solution is added to zinc(II) nitrate solution, the colourless solution remain colourless/ no visible change. [1]",
+                "keywords": "remain colourless / no visible change",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "5",
+        "part": "a",
+        "subpart": "",
+        "question_text": "State which diagram represents a dilute solution of a weak acid. Explain your answer.",
+        "marks": "3",
+        "answers_for_each_mark": [
+            {
+                "text": "2 [1]",
+                "keywords": "2",
+                "notes": ""
+            },
+            {
+                "text": "Weak acid: weak acid undergoes partial dissociation/ionization / presence of undissociated HA [1]",
+                "keywords": "partial dissociation/ionization / presence of undissociated HA",
+                "notes": "Annotation: ok: incomplete"
+            },
+            {
+                "text": "Dilute acid: low concentration of H+ [1] Idea: fewer particles per unit volume",
+                "keywords": "low concentration of H+",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "5",
+        "part": "b",
+        "subpart": "",
+        "question_text": "Explain why sulfuric acid is not represented by the diagrams above.",
+        "marks": "2",
+        "answers_for_each_mark": [
+            {
+                "text": "dibasic [1] Should be represented as A2- / H2SO4 dissociates to produce 2 H+ ions for every A2- [1]",
+                "keywords": "dibasic, 2 H+ ions for every A2-",
+                "notes": "Annotation: ok: produce 2 H+ per acid molecule, ok: ionise"
+            }
+        ]
+    },
+    {
+        "question_number": "5",
+        "part": "c",
+        "subpart": "",
+        "question_text": "Equal volumes of ethanoic acid and hydrochloric acid of the same concentration was allowed to react completely with magnesium. State, with a reason, whether the volume of hydrogen gas produced will differ.",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "No. same moles of acid / H+ ions [1]",
+                "keywords": "same moles of acid / H+ ions",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "5",
+        "part": "d",
+        "subpart": "",
+        "question_text": "Predict and explain which solution will be a better electrical conductor.",
+        "marks": "2",
+        "answers_for_each_mark": [
+            {
+                "text": "Solution 3. Solution 3 shows a concentrated solution of strong acid, which completely ionises in aqueous solution. [1]",
+                "keywords": "concentrated solution of strong acid, completely ionises",
+                "notes": ""
+            },
+            {
+                "text": "Hence, it has the largest amount of ions to act as mobile charge carriers to conduct electricity. [1]",
+                "keywords": "largest amount of ions, mobile charge carriers",
+                "notes": "Annotation: ok: highest concentration"
+            }
+        ]
+    },
+    {
+        "question_number": "6",
+        "part": "a",
+        "subpart": "i",
+        "question_text": "Complete the table.\n\nTable 3 shows some information about two isotopes of bromine. Students are supposed to fill in the three blank cells in the table: the number of protons for 81/35 Br⁻, the number of neutrons for 79/35 Br, and the number of electrons for 81/35 Br⁻. Model answers are filled in the table cells in blue text.\n\n| Symbol           | Number of protons | Number of neutrons | Number of electrons |\n|------------------|-------------------|--------------------|---------------------|\n| 79/35 Br        | 35                | 44                 | 35                  |\n| 81/35 Br⁻       | 35                | 46                 | 36                  |",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "Number of protons: 35, Number of neutrons: 44, Number of electrons: 36",
+                "keywords": "35, 44, 36",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "6",
+        "part": "a",
+        "subpart": "ii",
+        "question_text": "Use data from the table to explain the term isotopes.\n\nTable 3 shows some information about two isotopes of bromine. Model answers are filled in the table cells in blue text.\n\n| Symbol           | Number of protons | Number of neutrons | Number of electrons |\n|------------------|-------------------|--------------------|---------------------|\n| 79/35 Br        | 35                | 44                 | 35                  |\n| 81/35 Br⁻       | 35                | 46                 | 36                  |",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "isotopes have the same number of protons (i.e. 35), but different number of neutrons (i.e. 44, 46).",
+                "keywords": "same number of protons, different number of neutrons",
+                "notes": "Must make use of the data and quote the values. Don't have to say atoms of the same elements"
+            }
+        ]
+    },
+    {
+        "question_number": "6",
+        "part": "a",
+        "subpart": "iii",
+        "question_text": "Chlorine is treated with a sample of seawater containing magnesium bromide.\n\nWrite the ionic equation for the reaction that occurs.\n\nTable 3 shows some information about two isotopes of bromine. Model answers are filled in the table cells in blue text.\n\n| Symbol           | Number of protons | Number of neutrons | Number of electrons |\n|------------------|-------------------|--------------------|---------------------|\n| 79/35 Br        | 35                | 44                 | 35                  |\n| 81/35 Br⁻       | 35                | 46                 | 36                  |",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "Cl2 (g) + 2Br- (aq) ⟶ 2Cl- (aq) + Br2 (aq)",
+                "keywords": "",
+                "notes": "Annotation: ok: no state symbols"
+            }
+        ]
+    },
+    {
+        "question_number": "6",
+        "part": "a",
+        "subpart": "iv",
+        "question_text": "Explain why astatine does not react with aqueous magnesium bromide.\n\nTable 3 shows some information about two isotopes of bromine. Model answers are filled in the table cells in blue text.\n\n| Symbol           | Number of protons | Number of neutrons | Number of electrons |\n|------------------|-------------------|--------------------|---------------------|\n| 79/35 Br        | 35                | 44                 | 35                  |\n| 81/35 Br⁻       | 35                | 46                 | 36                  |",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "Astatine, being less reactive than bromine, is unable to displace bromine from its salt.",
+                "keywords": "less reactive than bromine, unable to displace",
+                "notes": "Annotation: accept from magnesium bromide in place of from its salt"
+            }
+        ]
+    },
+    {
+        "question_number": "6",
+        "part": "b",
+        "subpart": "i",
+        "question_text": "Describe what is observed when ozone is bubbled into aqueous potassium iodide.\n\nOzone first reacts with aqueous potassium iodide as shown in the equation below.\n\n2I⁻ (aq) + O₃ (g) + 2H⁺ (aq) ⟶ I₂ (aq) + O₂ (g) + H₂O (l)",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "The colourless solution turns dark-brown. [1]",
+                "keywords": "colourless solution turns dark-brown",
+                "notes": "Annotation: ok: brown / yellow-brown"
+            }
+        ]
+    },
+    {
+        "question_number": "6",
+        "part": "b",
+        "subpart": "ii",
+        "question_text": "Explain, in terms of oxidation states, why this is a redox reaction.\n\nOzone first reacts with aqueous potassium iodide as shown in the equation below.\n\n2I⁻ (aq) + O₃ (g) + 2H⁺ (aq) ⟶ I₂ (aq) + O₂ (g) + H₂O (l)",
+        "marks": "2",
+        "answers_for_each_mark": [
+            {
+                "text": "The iodine in potassium iodide undergoes oxidation, as the oxidation state of iodine increases from -1 in I⁻ to 0 in I₂. [1]",
+                "keywords": "oxidation, increases from -1 in I⁻ to 0 in I₂",
+                "notes": "Annotation: ok: I⁻ is oxidised"
+            },
+            {
+                "text": "The oxygen in ozone undergoes reduction, as the oxidation state of oxygen decreases from 0 in O₃ to -2 in H₂O. [1]\n\nSince oxidation and reduction is happening at the same time, it is a redox reaction.",
+                "keywords": "reduction, decreases from 0 in O₃ to -2 in H₂O",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "6",
+        "part": "b",
+        "subpart": "iii",
+        "question_text": "Calculate the number of moles of ozone that were bubbled into the 250 cm³ of potassium iodide in reaction (1).\n\nAfter reaction (1), 25.0 cm³ of this solution is pipetted into a conical flask.\n\nThis solution requires 15.75 cm³ of 0.150 mol dm⁻³ aqueous sodium thiosulfate solution for complete reaction, as shown.\n\n2S₂O₃²⁻ + I₂ ⟶ 2I⁻ + S₄O₆²⁻",
+        "marks": "4",
+        "answers_for_each_mark": [
+            {
+                "text": "Amt of S₂O₃²⁻ reacted = (15.75 / 1000) × 0.150 = 0.0023625 mol [1]",
+                "keywords": "0.0023625 mol",
+                "notes": ""
+            },
+            {
+                "text": "Amt of I₂ reacted in 25 cm³ = 0.0023625 / 2 = 0.00118125 mol [1]",
+                "keywords": "0.00118125 mol",
+                "notes": ""
+            },
+            {
+                "text": "Amt of I₂ reacted in 250 cm³ = 0.00118125 × 10 = 0.0118125 mol [1]",
+                "keywords": "0.0118125 mol",
+                "notes": ""
+            },
+            {
+                "text": "By C.M.R.\nI₂ : O₃ = 1 : 1\nAmt of O₃ = 0.0118125 mol [1]",
+                "keywords": "0.0118125 mol",
+                "notes": "If student shows comparing mol ratio and concludes O₃ = 0.00181 mol without scaling 10×, award [1] for comparing mol ratio AND concluding mole of O₃ is 0.00181 mol, maximum [3] for this whole question."
+            }
+        ]
+    },
+    {
+        "question_number": "6",
+        "part": "c",
+        "subpart": "i",
+        "question_text": "Draw a ‘dot-and-cross’ diagram for dimethyl sulfide, (CH3)2S. Show the valence electrons only.",
+        "marks": "2",
+        "answers_for_each_mark": [
+            {
+                "text": "1 - correct bonding e−. The diagram shows a sulfur (S) atom in the center bonded to two carbon (C) atoms. Each carbon atom is bonded to three hydrogen (H) atoms. Each bond is represented by a pair of electrons: one dot and one cross.",
+                "keywords": "correct bonding e−",
+                "notes": ""
+            },
+            {
+                "text": "1 - correct non-bonding e−. The diagram shows two lone pairs of electrons on the sulfur atom, each represented by two crosses.",
+                "keywords": "correct non-bonding e−",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "6",
+        "part": "c",
+        "subpart": "ii",
+        "question_text": "Explain, in terms of bonding and structure, why dimethyl sulfide is a gas at room temperature and pressure.",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "Dimethyl sulfide has a **simple molecular structure**. A **small amount of energy is required** to **overcome the weak intermolecular forces of attraction between molecules**.",
+                "keywords": "**simple molecular structure**, **small amount of energy is required**, **overcome the weak intermolecular forces of attraction between molecules**",
+                "notes": "ok: simple covalent structure; no need (heat) looking for evidence of structure, bonding and energy in the answer"
+            }
+        ]
+    },
+    {
+        "question_number": "7",
+        "part": "a",
+        "subpart": "",
+        "question_text": "State how nitrogen and hydrogen can be obtained for the making of ammonia.",
+        "marks": "2",
+        "answers_for_each_mark": [
+            {
+                "text": "nitrogen – **fractional distillation of liquid air**",
+                "keywords": "**fractional distillation of liquid air**",
+                "notes": ""
+            },
+            {
+                "text": "hydrogen – **cracking of petroleum / crude oil**",
+                "keywords": "**cracking of petroleum / crude oil**",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "7",
+        "part": "b",
+        "subpart": "i",
+        "question_text": "Explain in terms of collisions between (reacting) particles, how a higher temperature affects the rate of reaction in the reactor.",
+        "marks": "2",
+        "answers_for_each_mark": [
+            {
+                "text": "Higher temperature\nParticles gain **kinetic energy** & **move faster**",
+                "keywords": "**kinetic energy**, **move faster**",
+                "notes": "Accept if only one of the above is stated, maximum [1]"
+            },
+            {
+                "text": "More particles have energy **equal to or greater than activation energy**",
+                "keywords": "**equal to or greater than activation energy**",
+                "notes": "Accept if only one of the above is stated, maximum [1]"
+            },
+            {
+                "text": "**Increase in frequency of effective collisions**",
+                "keywords": "**Increase in frequency of effective collisions**",
+                "notes": ""
+            },
+            {
+                "text": "**Increase in rate of reaction**",
+                "keywords": "**Increase in rate of reaction**",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "7",
+        "part": "b",
+        "subpart": "ii",
+        "question_text": "Using the information in the graph, state the conditions that would produce the highest yield of ammonia.",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "350 °C and 400 atmospheres",
+                "keywords": "350 °C and 400 atmospheres",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "7",
+        "part": "b",
+        "subpart": "iii",
+        "question_text": "What effect does the iron catalyst have on the yield of ammonia obtained? Explain your reasoning.",
+        "marks": "2",
+        "answers_for_each_mark": [
+            {
+                "text": "no **effect on yield of ammonia**",
+                "keywords": "**effect on yield of ammonia**",
+                "notes": ""
+            },
+            {
+                "text": "increases the speed of both the **forward and reverse reactions to the same extent**",
+                "keywords": "**forward and reverse reactions to the same extent**",
+                "notes": ""
+            },
+            {
+                "text": "OR **Increase the speed, not the yield**",
+                "keywords": "**Increase the speed, not the yield**",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "7",
+        "part": "b",
+        "subpart": "iv",
+        "question_text": "In practice, it is not possible to obtain 100% yield of ammonia in the Haber Process. Explain why this is so.",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "it is a **reversible reaction**, ammonia decomposes to N2 and H2",
+                "keywords": "**reversible reaction**, ammonia decomposes to N2 and H2",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "8",
+        "part": "a",
+        "subpart": "",
+        "question_text": "The gases entering the column must be dry to avoid interference from water molecules. Suggest how the gases may be dried.",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "the gases may be passed through anhydrous/fused calcium chloride / quicklime / bubbled into/passed through concentrated sulfuric acid",
+                "keywords": "passed through anhydrous/fused calcium chloride / quicklime / bubbled into/passed through concentrated sulfuric acid",
+                "notes": "Note: Question asks 'how' therefore stating the chemical alone is not sufficient [1]"
+            }
+        ]
+    },
+    {
+        "question_number": "8",
+        "part": "b",
+        "subpart": "",
+        "question_text": "Helium is often used as a carrier gas in gas chromatography because it will not react with the mixture of substances analysed.\nExplain why helium will not react with other substances.",
+        "marks": "2",
+        "answers_for_each_mark": [
+            {
+                "text": "Helium is a **noble gas** with a **stable electronic configuration** of 2.\nOR Helium has a **fully filled valence electron shell**.",
+                "keywords": "**noble gas**, **stable electronic configuration**, **fully filled valence electron shell**",
+                "notes": ""
+            },
+            {
+                "text": "Hence, helium **does not need to gain, lose or share electrons** and will not react with other substances.",
+                "keywords": "**does not need to gain, lose or share electrons**",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "8",
+        "part": "c",
+        "subpart": "i",
+        "question_text": "The components in a sample of perfume can be analysed using a GC system. One factor affecting retention time is the rate of diffusion. Suggest the relationship between relative molecular mass, boiling point and the retention time.",
+        "marks": "2",
+        "answers_for_each_mark": [
+            {
+                "text": "The **higher the relative molecular mass**, the **higher the boiling point** and hence, the **longer the retention time / longer time taken for the component to travel through the column**",
+                "keywords": "**higher the relative molecular mass**, **higher the boiling point**, **longer the retention time / longer time taken for the component to travel through the column**",
+                "notes": "Cause and effect must be correct. Higher Mr -> Higher BP -> longer retention time"
+            }
+        ]
+    },
+    {
+        "question_number": "8",
+        "part": "c",
+        "subpart": "ii",
+        "question_text": "The components in a sample of perfume can be analysed using a GC system. One factor affecting retention time is the rate of diffusion. State the physical property that allows the top note of a liquid perfume to be the most prominent scent for the first 10-15 minutes.",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "High **volatility**",
+                "keywords": "**volatility**",
+                "notes": "Accept also low boiling point."
+            }
+        ]
+    },
+    {
+        "question_number": "8",
+        "part": "c",
+        "subpart": "iii",
+        "question_text": "The components in a sample of perfume can be analysed using a GC system. One factor affecting retention time is the rate of diffusion. Given that there are three top notes and two heart notes in the perfume sample, state the chemical that you will smell first after spraying the perfume for 20 minutes.",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "Eugenol",
+                "keywords": "Eugenol",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "8",
+        "part": "c",
+        "subpart": "iv",
+        "question_text": "The ratio of the heights of the signals gives the ratio of the amounts of the compounds present in the mixture.\n\nUse the chromatogram in Figure 8.3 to find the relative abundance of the chemicals in the heart note and express your answer in percentage.\n\nShow your working in the space below.",
+        "marks": "2",
+        "answers_for_each_mark": [
+            {
+                "text": "The two heart notes are eugenol and coumarin. Eugenol is the more abundant heart note\n\namount of eugenol : amount of coumarin\n= Signal eugenol height : Signal coumarin height = 70 : 13",
+                "keywords": "amount of eugenol : amount of coumarin = Signal eugenol height : Signal coumarin height = 70 : 13",
+                "notes": ""
+            },
+            {
+                "text": "Percentage amount of eugenol = \\( \\frac{70}{70+13} \\times 100 = 84.3\\% \\)\n\nPercentage amount of coumarin = \\( \\frac{13}{70+13} \\times 100 = 15.7\\% \\)",
+                "keywords": "Percentage amount of eugenol = 84.3%, Percentage amount of coumarin = 15.7%",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "8",
+        "part": "d",
+        "subpart": "i",
+        "question_text": "Describe how the flow rate of the carrier gas affects the retention time of the compounds.",
+        "marks": "2",
+        "answers_for_each_mark": [
+            {
+                "text": "A **higher flow rate will result in shorter retention time**",
+                "keywords": "**higher flow rate will result in shorter retention time**",
+                "notes": "Shorter retention time [1]"
+            },
+            {
+                "text": "For example, with hexane when the flow rate increases from 20 cm/min to 35 cm/min, the retention time decreases from 5.5 min to 4.0 min.",
+                "keywords": "",
+                "notes": "Description [1]"
+            }
+        ]
+    },
+    {
+        "question_number": "8",
+        "part": "d",
+        "subpart": "ii",
+        "question_text": "Another identical mixture of benzene and hexane is separated with gas chromatography. The type of carrier gas and temperature used are kept constant, but the flow rate of the carrier gas is increased to higher than 35 cm/min.\n\nOnly one signal is obtained in the chromatogram shown in Fig 9.4.\n\nSuggest why only one signal is obtained.",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "The **flow rate was too fast**, so the peak of benzene and hexane was not separated / both reach the detector at the same time.",
+                "keywords": "**flow rate was too fast**",
+                "notes": "Student must communicate the idea that the peaks cannot be separated because the flow rate was too fast."
+            }
+        ]
+    },
+    {
+        "question_number": "9either",
+        "part": "a",
+        "subpart": "",
+        "question_text": "Describe and explain what happens in each of the cells that leads to electroplating of the ‘star’ object.\nYou answer should:\n• describe the expected observations in each of the cells\n• explain why each change occurs\n• give half-equations at each of the rods\n• relate the galvanic cell to the electrolytic cell.",
+        "marks": "6",
+        "answers_for_each_mark": [
+            {
+                "text": "In the galvanic cell, **Zinc is more reactive than copper** and therefore will be **oxidised**.",
+                "keywords": "**Zinc is more reactive than copper**, **oxidised**",
+                "notes": ""
+            },
+            {
+                "text": "Zn (s) → Zn2+ (aq) + 2e",
+                "keywords": "Zn (s) → Zn2+ (aq) + 2e",
+                "notes": ""
+            },
+            {
+                "text": "**Reduction occurs at the copper rod.**\nCu2+ (aq) + 2e → Cu",
+                "keywords": "**Reduction occurs at the copper rod.**",
+                "notes": ""
+            },
+            {
+                "text": "Change in size of Cu and Zn rod, (say that zinc becomes smaller in size and copper become larger in size)\nState that pink solid deposited",
+                "keywords": "Change in size of Cu and Zn rod, pink solid deposited",
+                "notes": "These are overlapping points on observation, award once"
+            },
+            {
+                "text": "The **electrons released from the zinc rod will flow to the ‘star’ object.**",
+                "keywords": "**electrons released from the zinc rod will flow to the ‘star’ object.**",
+                "notes": ""
+            },
+            {
+                "text": "**Reduction occurs at the ‘star’ object**\nAg+(aq) + e → Ag\nA **silver/silver-grey deposit is therefore electroplated onto the ‘star’ object.**",
+                "keywords": "**Reduction occurs at the ‘star’ object**, **silver/silver-grey deposit is therefore electroplated onto the ‘star’ object.**",
+                "notes": "Accept words to that effect that the galvanic cell fuels the electrolytic cell."
+            }
+        ]
+    },
+    {
+        "question_number": "9either",
+        "part": "b",
+        "subpart": "",
+        "question_text": "The reactions happening in the galvanic cell is exothermic. However, no temperature rise was detected.\nWhat could be a possible reason?",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "The energy released was in the form of **electrical energy, not heat / thermal energy.**",
+                "keywords": "**electrical energy, not heat / thermal energy.**",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "9either",
+        "part": "c",
+        "subpart": "",
+        "question_text": "Upon trying out her experiment, the student realised that the electroplating did not go as well as she expected and suspected that there was insufficient voltage.\nSuggest and explain briefly what she can do to overcome the problem of insufficient voltage.",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "Increase number of galvanic cells to increase the electrons/electricity. OR\nUse Mg and Ag at the galvanic cells instead as they are further apart in the reactivity series and have greater potential difference/generate more voltage.",
+                "keywords": "Increase number of galvanic cells, greater potential difference/generate more voltage",
+                "notes": "Accept other answers that makes sense"
+            }
+        ]
+    },
+    {
+        "question_number": "9either",
+        "part": "d",
+        "subpart": "i",
+        "question_text": "Another student suggested that it could be because there are no more silver ions in the electrolyte of the electrolytic cell.\nDescribe how they can check if this suggested reason is valid.",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "They can take out a sample of the electrolyte and add dilute nitric acid followed by aqueous barium chloride. If a white precipitate is formed, there is still presence of Ag+ ions.",
+                "keywords": "white precipitate is formed, presence of Ag+ ions",
+                "notes": "Accept reverse argument [RA]"
+            }
+        ]
+    },
+    {
+        "question_number": "9either",
+        "part": "d",
+        "subpart": "ii",
+        "question_text": "What modification would you advise the student to do to overcome the problem in (d)(i)",
+        "marks": "1",
+        "answers_for_each_mark": [
+            {
+                "text": "Change the carbon electrode to (pure) silver.",
+                "keywords": "Change the carbon electrode to (pure) silver.",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "question_number": "9or",
+        "part": "a",
+        "subpart": "",
+        "question_text": "Describe and explain what happens in each of the cells.\nYou answer should:\n• describe the expected observations in each of the cells\n• explain why each change occurs, you may use half equations to aid your explanation.",
+        "marks": "6",
+        "answers_for_each_mark": [
+            {
+                "text": "In cell 1,\n**Oxidation occurs at the anode/electrode on the left, and bubbling of oxygen gas is observed.**\nin equation 4OH− (aq) → O2 (g) + 2H2O (l) + 4e",
+                "keywords": "**Oxidation occurs at the anode/electrode on the left, and bubbling of oxygen gas is observed.**",
+                "notes": "Observation + explanation/equation [1]"
+            },
+            {
+                "text": "**Reduction occurs at the cathode/electrode on the right, which undergoes reduction and effervescence or hydrogen gas is observed**\nin equation 2H+ (aq) + 2e → H2 (g)",
+                "keywords": "**Reduction occurs at the cathode/electrode on the right, which undergoes reduction and effervescence or hydrogen gas is observed**",
+                "notes": "Observation + explanation/equation [1]\nThis applies for cell 2 and 3 also, do not double count the marks"
+            },
+            {
+                "text": "In cell 2,\n**silver anode/electrode on the left is a reactive electrode and will undergo oxidation and silver electrode reduces in size.**\nin equation Ag (s) → Ag+ (aq) + e",
+                "keywords": "**silver anode/electrode on the left is a reactive electrode and will undergo oxidation and silver electrode reduces in size.**",
+                "notes": "Observation + explanation/equation [1]"
+            },
+            {
+                "text": "[BOD] **Reduction occurs at the cathode/electrode on the right, which undergoes reduction and silver electrode increases in size**\nin equation Ag+ + e → Ag",
+                "keywords": "**Reduction occurs at the cathode/electrode on the right, which undergoes reduction and silver electrode increases in size**",
+                "notes": "Observation + explanation/equation [1]"
+            },
+            {
+                "text": "In cell 3,\n**iron anode/electrode on the left is a reactive electrode and will undergo oxidation and iron electrode reduces in size.**\nin equation Fe (s) → Fe2+/3+ (aq) + 2/3e",
+                "keywords": "**iron anode/electrode on the left is a reactive electrode and will undergo oxidation and iron electrode reduces in size.**",
+                "notes": "Observation + explanation/equation [1]"
+            },
+            {
+                "text": "There will also be **effervescence observed at the iron anode as iron reacts with acid to form a salt and hydrogen gas.**\n**As Fe2+/3+ is present in the solution, the solution will turn from colourless to pale green/yellow**",
+                "keywords": "**effervescence observed at the iron anode as iron reacts with acid to form a salt and hydrogen gas.**, **solution will turn from colourless to pale green/yellow**",
+                "notes": "Acid Metal Reaction [1], Electrolyte [1]"
+            }
+        ]
+    },
+    {
+        "question_number": "9or",
+        "part": "b",
+        "subpart": "i",
+        "question_text": "If the electrolyte has been changed to silver nitrate, describe and explain what changes in observation you would predict in\nCell 1",
+        "marks": "2",
+        "answers_for_each_mark": [
+            {
+                "text": "Ag+ ions are lower in the electrochemical series than H+ and therefore will be preferentially reduced to form Ag (s).",
+                "keywords": "preferentially reduced to form Ag (s).",
+                "notes": "[1]"
+            },
+            {
+                "text": "Hence a shiny grey deposit will form and / there will be no bubbling at the cathode",
+                "keywords": "shiny grey deposit will form, no bubbling at the cathode",
+                "notes": "[1]"
+            }
+        ]
+    },
+    {
+        "question_number": "9or",
+        "part": "b",
+        "subpart": "ii",
+        "question_text": "Cell 3 that is different from the change mentioned in (b)(i)",
+        "marks": "2",
+        "answers_for_each_mark": [
+            {
+                "text": "Iron is more reactive than silver and will displace silver from silver nitrate.",
+                "keywords": "Iron is more reactive than silver and will displace silver from silver nitrate.",
+                "notes": ""
+            },
+            {
+                "text": "Colour of solution will turn pale green/yellow / both electrode will reduce in size",
+                "keywords": "Colour of solution will turn pale green/yellow, both electrode will reduce in size",
+                "notes": ""
+            }
+        ]
+    }
+]
