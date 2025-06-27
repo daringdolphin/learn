@@ -15,7 +15,7 @@ export default async function HomePage() {
             Get Feedback for Sec 4 Chem Mock Exam
           </h1>
           <p className="text-lg text-gray-600">
-            It's (kinda) not your fault; never lose marks for dumb reasons again.
+            Bad grades are (kinda) not your fault; never lose marks for dumb reasons again.
           </p>
         </div>
 

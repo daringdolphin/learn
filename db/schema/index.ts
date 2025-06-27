@@ -6,4 +6,5 @@ Exports the database schema for the app.
 
 export * from "./questions-schema"
 export * from "./model-answer-images-schema"
+export * from "./feedback-schema"
 

@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { FeedbackTabs } from '@/components/feedback/feedback-tabs'
 import { getAnalysisResult, removeAnalysisResult } from '@/lib/utils/storage'
+import { createFeedbackAction } from '@/actions/db/feedback-actions'
 import Link from 'next/link'
 import type { Question, AnalysisResult } from '@/types'
 
@@ -18,6 +19,7 @@ export function ResultsDisplay({ question }: ResultsDisplayProps) {
   const [analysisResult, setAnalysisResult] = useState<AnalysisResult | null>(null)
   const [loading, setLoading] = useState(true)
   const [shareUrl, setShareUrl] = useState<string>('')
+  const [feedbackTracked, setFeedbackTracked] = useState(false)
   const router = useRouter()
 
   useEffect(() => {
@@ -29,6 +31,40 @@ export function ResultsDisplay({ question }: ResultsDisplayProps) {
     // Set share URL
     setShareUrl(window.location.href)
   }, [question.id])
+
+  // Track feedback when analysis result is displayed
+  useEffect(() => {
+    if (analysisResult && !feedbackTracked) {
+      trackFeedback()
+      setFeedbackTracked(true)
+    }
+  }, [analysisResult, feedbackTracked])
+
+  const trackFeedback = async () => {
+    if (!analysisResult) return
+    
+    try {
+      // Create full feedback content for tracking
+      const examSkillsFeedback = analysisResult.examSkills?.content || ''
+      const conceptualFeedback = analysisResult.conceptualUnderstanding?.content || ''
+      
+      const fullFeedback = `QUESTION ${question.id.replace('q', '').replace(/^0+/, '')} (${question.marks} marks)
+
+EXAM SKILLS FEEDBACK:
+${examSkillsFeedback}
+
+CONCEPTUAL UNDERSTANDING FEEDBACK:
+${conceptualFeedback}`
+      
+      await createFeedbackAction({
+        question: question.id,
+        feedback: fullFeedback
+      })
+    } catch (error) {
+      // Silently handle feedback tracking errors to not disrupt user experience
+      console.error('Failed to track feedback:', error)
+    }
+  }
 
   const handleRetryAnalysis = () => {
     // Clear stored result and redirect to analysis page
