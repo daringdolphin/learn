@@ -7,6 +7,9 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { CameraCapture } from '@/components/camera/camera-capture'
 import { saveAnalysisResult } from '@/lib/utils/storage'
+import { ErrorAlert } from '@/components/ui/error-alert'
+import { useErrorBoundary } from '@/lib/hooks/use-error-boundary'
+import { retryWithBackoff } from '@/lib/utils/error-handling'
 import Link from 'next/link'
 import type { Question, AnalysisResult } from '@/types'
 
@@ -17,28 +20,28 @@ interface QuestionAnalysisProps {
 export function QuestionAnalysis({ question }: QuestionAnalysisProps) {
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
   const [isAnalyzing, setIsAnalyzing] = useState(false)
-  const [error, setError] = useState<string>('')
   const [timeoutWarning, setTimeoutWarning] = useState(false)
+  const { error, hasError, resetError, captureError } = useErrorBoundary()
   const router = useRouter()
 
   const handleImageCapture = (file: File) => {
     setSelectedFile(file)
-    setError('')
+    resetError()
   }
 
   const handleImageRemove = () => {
     setSelectedFile(null)
-    setError('')
+    resetError()
   }
 
   const handleSubmit = async () => {
     if (!selectedFile) {
-      setError('Please capture or upload an image of your answer sheet')
+      captureError('Please capture or upload an image of your answer sheet', 'File validation')
       return
     }
 
     setIsAnalyzing(true)
-    setError('')
+    resetError()
     setTimeoutWarning(false)
 
     // Show timeout warning after 60 seconds
@@ -83,8 +86,7 @@ export function QuestionAnalysis({ question }: QuestionAnalysisProps) {
 
     } catch (error) {
       clearTimeout(timeoutTimer)
-      console.error('Analysis error:', error)
-      setError(error instanceof Error ? error.message : 'An unexpected error occurred')
+      captureError(error instanceof Error ? error : new Error(String(error)), 'Analysis request')
     } finally {
       setIsAnalyzing(false)
       setTimeoutWarning(false)
@@ -146,10 +148,12 @@ export function QuestionAnalysis({ question }: QuestionAnalysisProps) {
       </Card>
 
       {/* Error Display */}
-      {error && (
-        <div className="p-4 bg-red-50 border border-red-200 rounded-md">
-          <p className="text-sm text-red-600">{error}</p>
-        </div>
+      {hasError && error && (
+        <ErrorAlert
+          error={error}
+          onRetry={resetError}
+          showRetry={error.canRetry}
+        />
       )}
 
       {/* Timeout Warning */}

@@ -6,6 +6,7 @@ import { eq } from 'drizzle-orm'
 import { supabase } from '@/lib/api/supabase'
 import { analyzeChemistryAnswer } from '@/lib/api/openai'
 import { processUploadedImage, MAX_FILE_SIZE, ALLOWED_MIME_TYPES } from '@/lib/utils/image-processing'
+import { logError } from '@/lib/utils/error-handling'
 import { ActionState, AnalysisResult, ModelAnswerPart } from '@/types'
 
 /**
@@ -121,7 +122,7 @@ export async function analyzeAnswerAction(formData: FormData): Promise<ActionSta
         }
       }
 
-      console.error('Analysis error:', analysisError)
+      logError(analysisError instanceof Error ? analysisError : new Error(String(analysisError)), 'OpenAI Analysis')
       return {
         isSuccess: false,
         message: 'Failed to analyze the answer. Please try again.'
@@ -135,7 +136,7 @@ export async function analyzeAnswerAction(formData: FormData): Promise<ActionSta
     }
 
   } catch (error) {
-    console.error('Server action error:', error)
+    logError(error instanceof Error ? error : new Error(String(error)), 'Server Action analyzeAnswerAction')
     return {
       isSuccess: false,
       message: 'An unexpected error occurred. Please try again.'

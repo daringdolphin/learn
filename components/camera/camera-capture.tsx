@@ -5,6 +5,7 @@ import { Camera, Upload, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { ImagePreview } from '@/components/camera/image-preview'
+import { ErrorAlert } from '@/components/ui/error-alert'
 
 interface CameraCaptureProps {
   onImageCapture: (file: File) => void
@@ -134,9 +135,12 @@ export function CameraCapture({
 
           {/* Error Message */}
           {error && (
-            <div className="p-3 bg-red-50 border border-red-200 rounded-md">
-              <p className="text-sm text-red-600">{error}</p>
-            </div>
+            <ErrorAlert 
+              error={error}
+              onDismiss={() => setError('')}
+              showDismiss
+              compact
+            />
           )}
 
           {/* Hidden File Inputs */}

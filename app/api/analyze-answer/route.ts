@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { analyzeAnswerAction } from '@/lib/actions/analyze-answer'
+import { createErrorResponse, logError } from '@/lib/utils/error-handling'
 
 export async function POST(request: NextRequest) {
   try {
@@ -66,15 +67,19 @@ export async function POST(request: NextRequest) {
     }
 
   } catch (error) {
-    console.error('API route error:', error)
+    // Log the error with context
+    logError(error instanceof Error ? error : new Error(String(error)), 'API /analyze-answer')
+    
+    // Create a standardized error response
+    const errorResponse = createErrorResponse(
+      error instanceof Error ? error : new Error(String(error)),
+      500
+    )
     
     return NextResponse.json(
+      errorResponse,
       { 
-        error: 'Internal server error',
-        message: 'An unexpected error occurred while processing your request'
-      },
-      { 
-        status: 500,
+        status: errorResponse.statusCode,
         headers: {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*',
