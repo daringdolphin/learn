@@ -12,12 +12,13 @@ import { TailwindIndicator } from "@/components/utilities/tailwind-indicator"
 import { cn } from "@/lib/utils"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Chemistry Exam Analysis Tool",
+  title: "Get Chem Feedback",
   description: "AI-powered chemistry exam analysis tool for Secondary-4 students",
   manifest: "/manifest.json",
   appleWebApp: {
@@ -62,6 +63,8 @@ export default async function RootLayout({
           <TailwindIndicator />
 
           <Toaster />
+          
+          <Analytics />
         </Providers>
       </body>
     </html>
